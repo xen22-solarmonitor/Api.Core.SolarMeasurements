@@ -13,9 +13,29 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreInstaller@0
-  displayName: 'Install .net core 3.0 (preview)'
+# - task: DotNetCoreInstaller@0
+#   displayName: 'Install .net core 3.0 (preview)'
+#   inputs:
+#     version: '3.0.100-preview6-012264'
+- task: UseDotNet@2
   inputs:
+    packageType: 'sdk'
     version: '3.0.100-preview6-012264'
+    includePreviewVersions: true
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+# run unit tests
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
+    testRunTitle: 'Run unit tests'
+
+  # run integration tests
+
+  # generate proxy
+
+  # push proxy to Nuget repo
+
+  # 
