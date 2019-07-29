@@ -18,6 +18,7 @@ steps:
 #   inputs:
 #     version: '3.0.100-preview6-012264'
 - task: UseDotNet@2
+  displayName: 'Install .NET Core 3.0 SDK'
   inputs:
     packageType: 'sdk'
     version: '3.0.100-preview6-012264'
@@ -27,6 +28,7 @@ steps:
 
 # run unit tests
 - task: DotNetCoreCLI@2
+  displayName: 'Run unit tests'
   inputs:
     command: 'test'
     projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
@@ -34,6 +36,7 @@ steps:
 
 # run integration tests
 - task: DotNetCoreCLI@2
+  displayName: 'Run integration tests'
   inputs:
     command: 'test'
     projects: './test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
