@@ -32,10 +32,15 @@ steps:
     projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
     testRunTitle: 'Run unit tests'
 
-  # run integration tests
+# run integration tests
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: './test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
+    testRunTitle: 'Run integration tests'
 
-  # generate proxy
+# generate proxy
 
-  # push proxy to Nuget repo
+# push proxy to Nuget repo
 
-  # 
+ 
