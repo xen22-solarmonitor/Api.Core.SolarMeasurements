@@ -6,41 +6,106 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+# pool:
+#   vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
 
-steps:
-# - task: DotNetCoreInstaller@0
-#   displayName: 'Install .net core 3.0 (preview)'
+stages:
+- stage: build
+  jobs:
+  - job: PrepareMachine
+    pool:
+      vmImage: 'ubuntu-latest'
+      name: BuildAgent
+    steps:
+    # - task: DotNetCoreInstaller@0
+    #   displayName: 'Install .net core 3.0 (preview)'
+    #   inputs:
+    #     version: '3.0.100-preview6-012264'
+    - task: UseDotNet@2
+      displayName: 'Install .NET Core 3.0 SDK'
+      inputs:
+        packageType: 'sdk'
+        version: '3.0.100-preview6-012264'
+        includePreviewVersions: true
+
+  - job: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+      name: BuildAgent
+    steps:
+    # - task: DotNetCoreInstaller@0
+    #   displayName: 'Install .net core 3.0 (preview)'
+    #   inputs:
+    #     version: '3.0.100-preview6-012264'
+    - task: UseDotNet@2
+      displayName: 'Install .NET Core 3.0 SDK'
+      inputs:
+        packageType: 'sdk'
+        version: '3.0.100-preview6-012264'
+        includePreviewVersions: true
+    - script: dotnet build --configuration $(buildConfiguration)
+      displayName: 'dotnet build $(buildConfiguration)'
+  
+- stage: Tests
+  jobs:
+  - job: UnitTests
+    displayName: 'Run unit tests'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Run unit tests'
+      inputs:
+        command: 'test'
+        projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
+        testRunTitle: 'Run unit tests'
+    - bash: echo "Publish results..."
+    - bash: echo "Save coverage report..."
+
+  - job: IntegrationTests
+    dependsOn: []    # this removes the implicit dependency on previous job and causes this to run in parallel
+    displayName: 'Run integration tests'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Run integration tests'
+      inputs:
+        command: 'test'
+        projects: './test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
+        testRunTitle: 'Run integration tests'
+    - bash: echo "Publish results..."
+    - bash: echo "Save coverage report..."
+
+
+# steps:
+# # - task: DotNetCoreInstaller@0
+# #   displayName: 'Install .net core 3.0 (preview)'
+# #   inputs:
+# #     version: '3.0.100-preview6-012264'
+# - task: UseDotNet@2
+#   displayName: 'Install .NET Core 3.0 SDK'
 #   inputs:
+#     packageType: 'sdk'
 #     version: '3.0.100-preview6-012264'
-- task: UseDotNet@2
-  displayName: 'Install .NET Core 3.0 SDK'
-  inputs:
-    packageType: 'sdk'
-    version: '3.0.100-preview6-012264'
-    includePreviewVersions: true
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+#     includePreviewVersions: true
+# - script: dotnet build --configuration $(buildConfiguration)
+#   displayName: 'dotnet build $(buildConfiguration)'
 
 # run unit tests
-- task: DotNetCoreCLI@2
-  displayName: 'Run unit tests'
-  inputs:
-    command: 'test'
-    projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
-    testRunTitle: 'Run unit tests'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Run unit tests'
+#   inputs:
+#     command: 'test'
+#     projects: './test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
+#     testRunTitle: 'Run unit tests'
 
 # run integration tests
-- task: DotNetCoreCLI@2
-  displayName: 'Run integration tests'
-  inputs:
-    command: 'test'
-    projects: './test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
-    testRunTitle: 'Run integration tests'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Run integration tests'
+#   inputs:
+#     command: 'test'
+#     projects: './test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
+#     testRunTitle: 'Run integration tests'
 
 # generate proxy
 
