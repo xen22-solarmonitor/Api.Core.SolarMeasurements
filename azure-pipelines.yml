@@ -37,6 +37,12 @@ stages:
   - job: UnitTests
     displayName: 'Run unit tests'
     steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET Core 3.0 SDK'
+      inputs:
+        packageType: 'sdk'
+        version: '3.0.100-preview6-012264'
+        includePreviewVersions: true
     - task: DotNetCoreCLI@2
       displayName: 'Run unit tests'
       inputs:
@@ -50,6 +56,12 @@ stages:
     dependsOn: []    # this removes the implicit dependency on previous job and causes this to run in parallel
     displayName: 'Run integration tests'
     steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET Core 3.0 SDK'
+      inputs:
+        packageType: 'sdk'
+        version: '3.0.100-preview6-012264'
+        includePreviewVersions: true
     - task: DotNetCoreCLI@2
       displayName: 'Run integration tests'
       inputs:
