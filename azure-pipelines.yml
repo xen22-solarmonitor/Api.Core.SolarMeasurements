@@ -15,26 +15,9 @@ variables:
 stages:
 - stage: build
   jobs:
-  - job: PrepareMachine
-    pool:
-      vmImage: 'ubuntu-latest'
-      name: BuildAgent
-    steps:
-    # - task: DotNetCoreInstaller@0
-    #   displayName: 'Install .net core 3.0 (preview)'
-    #   inputs:
-    #     version: '3.0.100-preview6-012264'
-    - task: UseDotNet@2
-      displayName: 'Install .NET Core 3.0 SDK'
-      inputs:
-        packageType: 'sdk'
-        version: '3.0.100-preview6-012264'
-        includePreviewVersions: true
-
   - job: Build
     pool:
       vmImage: 'ubuntu-latest'
-      name: BuildAgent
     steps:
     # - task: DotNetCoreInstaller@0
     #   displayName: 'Install .net core 3.0 (preview)'
