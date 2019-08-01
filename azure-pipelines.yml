@@ -91,11 +91,13 @@ stages:
 
   jobs:
 
-    pool:
-      vmImage: 'ubuntu-latest'
-
     - job: UnitTests
+
       displayName: 'Run unit tests'
+
+      pool:
+        vmImage: 'ubuntu-latest'
+      
       steps:
 
         # skip source code checkout since we've already built and archived it 
