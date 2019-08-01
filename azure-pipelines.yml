@@ -65,7 +65,7 @@ stages:
         projects: './Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj'
         arguments: '--no-build --configuration $(buildConfiguration)'
 
-    - publish: $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0/publish/
+    - publish: './src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0/publish/'
       displayName: 'Archive API binaries'
       artifact: ApiBinaries
 
