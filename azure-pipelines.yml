@@ -135,7 +135,7 @@ stages:
         - checkout: none
 
         - download: current
-            artifact: BuiltSourceTree
+          artifact: BuiltSourceTree
             
         - task: UseDotNet@2
           displayName: 'Install .NET Core 3.0 SDK'
