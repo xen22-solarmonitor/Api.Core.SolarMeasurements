@@ -50,22 +50,19 @@ stages:
         projects: './Api.Core.SolarMeasurements.sln'
         feedsToUse: 'config'
         nugetConfigPath: './NuGet.Config'
-        #verbosityPack: 'diagnostic'
-        #feedsToUse: 'Select'
-        #includeNuGetOrg: true
         
     - task: DotNetCoreCLI@2
       displayName: 'Build solution'
       inputs:
         command: 'build'
-        projects: './src/Api.Core.SolarMeasurements.sln'
+        projects: './Api.Core.SolarMeasurements.sln'
         arguments: '--no-restore --configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Publish API binaries'
       inputs:
         command: 'publish'
-        projects: './src/Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj'
+        projects: './Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj'
         arguments: '--no-build --configuration $(buildConfiguration)'
 
     - publish: $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0/publish/
