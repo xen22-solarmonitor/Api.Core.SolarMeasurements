@@ -48,8 +48,9 @@ stages:
       inputs:
         command: 'restore'
         projects: './src/Api.Core.SolarMeasurements.sln'
-        feedsToUse: 'config'
-        nugetConfigPath: './NuGet.Config'        
+        feedsToUse: 'Config'
+        nugetConfigPath: 'NuGet.Config'
+        verbosityPack: 'diagnostic'
         
     - task: DotNetCoreCLI@2
       displayName: 'Build solution'
