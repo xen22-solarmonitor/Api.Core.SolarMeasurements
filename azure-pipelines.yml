@@ -47,12 +47,12 @@ stages:
       displayName: 'Restore NuGet dependencies'
       inputs:
         command: 'restore'
-        projects: './src/Api.Core.SolarMeasurements.sln'
-        #feedsToUse: 'Config'
-        #nugetConfigPath: 'NuGet.Config'
+        projects: './Api.Core.SolarMeasurements.sln'
+        feedsToUse: 'config'
+        nugetConfigPath: './NuGet.Config'
         #verbosityPack: 'diagnostic'
-        feedsToUse: 'Select'
-        includeNuGetOrg: true
+        #feedsToUse: 'Select'
+        #includeNuGetOrg: true
         
     - task: DotNetCoreCLI@2
       displayName: 'Build solution'
