@@ -207,7 +207,7 @@ stages:
           displayName: 'Create Docker image'
           inputs:
             command: 'build'
-            Dockerfile: '$(Pipeline.Workspace)/Dockerfile'
+            Dockerfile: '$(Pipeline.Workspace)/Dockerfile/Dockerfile'
             tags: '$(dockerId)/Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
 
         - task: Docker@2
