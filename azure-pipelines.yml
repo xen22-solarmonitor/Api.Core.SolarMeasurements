@@ -64,8 +64,7 @@ stages:
       inputs:
         command: 'build'
         projects: './Api.Core.SolarMeasurements.sln'
-        configuration: '$(buildConfiguration)'
-        arguments: '--no-restore'
+        arguments: '--no-restore --configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Publish API binaries'
@@ -74,8 +73,7 @@ stages:
         projects: './Api.Core.SolarMeasurements.sln'
         zipAfterPublish: false
         publishWebProjects: true
-        configuration: '$(buildConfiguration)'
-        nobuild: true
+        arguments: '--no-build --configuration $(buildConfiguration)'
         
     - bash: ls -la $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0
 
@@ -138,8 +136,7 @@ stages:
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
             testRunTitle: 'Run unit tests'
             publishTestResults: true
-            nobuild: true
-            configuration: '$(buildConfiguration)'
+            arguments: '--no-build --configuration $(buildConfiguration)'
 
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
@@ -171,9 +168,8 @@ stages:
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
             testRunTitle: 'Run integration tests'
             publishTestResults: true
-            nobuild: true
-            configuration: '$(buildConfiguration)'
-
+            arguments: '--no-build --configuration $(buildConfiguration)'
+  
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
 
