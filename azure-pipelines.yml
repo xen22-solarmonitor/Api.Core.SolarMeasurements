@@ -62,7 +62,7 @@ stages:
       displayName: 'Publish API binaries'
       inputs:
         command: 'publish'
-        projects: './Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj'
+        projects: './Api.Core.SolarMeasurements.sln'
         arguments: '--no-build --configuration $(buildConfiguration)'
         
     - bash: ls -la $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0
