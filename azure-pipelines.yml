@@ -127,7 +127,7 @@ stages:
             command: 'test'
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
             testRunTitle: 'Run unit tests'
-
+            arguments: '--no-build --configuration $(buildConfiguration)'
             
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
@@ -158,6 +158,7 @@ stages:
             command: 'test'
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
             testRunTitle: 'Run integration tests'
+            arguments: '--no-build --configuration $(buildConfiguration)'
 
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
@@ -194,7 +195,7 @@ stages:
           displayName: 'Create Docker image'
           inputs:
             command: 'build'
-            Dockerfile: './Dockerfile'
+            Dockerfile: '$(Pipeline.Workspace)/Dockerfile'
             tags: '$(dockerId)/Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
 
         - task: Docker@2
