@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/azure-pipelines.yml" line="46" />
+    <bookmark url="file://$PROJECT_DIR$/azure-pipelines.yml" line="199" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c3b1fad-4140-4cff-9c3c-2b9b16938103" name="Default Changelist" comment="" />
+    <list default="true" id="1c3b1fad-4140-4cff-9c3c-2b9b16938103" name="Default Changelist" comment="Updated pipeline">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/markdown-navigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-pipelines.yml" beforeDir="false" afterPath="$PROJECT_DIR$/azure-pipelines.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,63 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs">
+        <entry file="file://$PROJECT_DIR$/azure-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
-              <folding>
-                <marker date="1564369340488" expanded="true" signature="6:670" ph="..." />
-                <marker date="1564369340488" expanded="true" signature="708:5025" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="735:5023" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="794:857" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="921:1094" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
-                <marker date="1564369340488" expanded="true" signature="1161:3286" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="1634:2556" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="1703:2140" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="1961:2122" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="3008:3276" ph="/* Add custom provider ... */" />
-                <marker date="1564369340488" expanded="true" signature="3474:4702" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="3606:3683" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="3700:3903" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="3957:4062" ph="/* app.UseAuthentication(); ... */" />
-                <marker date="1564369340488" expanded="true" signature="4226:4296" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="4435:4551" ph="/* Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), ... */" />
-                <marker date="1564369340488" expanded="true" signature="4598:4690" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="4746:4818" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="4860:4929" ph="{...}" />
-                <marker date="1564369340488" expanded="true" signature="4973:5017" ph="{...}" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="201" column="22" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Program.cs">
+        <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-              <folding>
-                <marker date="1564369195073" expanded="false" signature="6:150" ph="..." />
-                <marker date="1564369195073" expanded="true" signature="188:1814" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="222:1812" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="275:752" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="334:477" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="509:613" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="633:742" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="822:1019" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="1067:1602" ph="{...}" />
-                <marker date="1564369195073" expanded="true" signature="1604:1806" ph="/* private static IWebHostBuilder CreateWebHostBuilder(string[] args) =&gt; ... */" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NuGet.Config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -77,14 +53,14 @@
             <state relative-caret-position="90">
               <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <marker date="1564352986191" expanded="true" signature="6:197" ph="..." />
-                <marker date="1564352986191" expanded="true" signature="248:1700" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="318:1698" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="503:691" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="801:1088" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="974:1028" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="1163:1485" ph="{...}" />
-                <marker date="1564352986191" expanded="true" signature="1623:1692" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="6:197" ph="..." />
+                <marker date="1564450834975" expanded="true" signature="248:1700" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="318:1698" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="503:691" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="801:1088" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="974:1028" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="1163:1485" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="1623:1692" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -96,9 +72,9 @@
             <state relative-caret-position="36">
               <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding>
-                <marker date="1564352986203" expanded="false" signature="6:118" ph="..." />
-                <marker date="1564352986203" expanded="true" signature="169:441" ph="{...}" />
-                <marker date="1564352986203" expanded="true" signature="221:439" ph="{...}" />
+                <marker date="1564450834975" expanded="false" signature="6:118" ph="..." />
+                <marker date="1564450834975" expanded="true" signature="169:441" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="221:439" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -110,9 +86,9 @@
             <state relative-caret-position="36">
               <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding>
-                <marker date="1564352986179" expanded="false" signature="6:118" ph="..." />
-                <marker date="1564352986179" expanded="true" signature="165:419" ph="{...}" />
-                <marker date="1564352986179" expanded="true" signature="214:417" ph="{...}" />
+                <marker date="1564450834975" expanded="false" signature="6:118" ph="..." />
+                <marker date="1564450834975" expanded="true" signature="165:419" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="214:417" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -124,12 +100,12 @@
             <state relative-caret-position="54">
               <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding>
-                <marker date="1564352985679" expanded="false" signature="6:254" ph="..." />
-                <marker date="1564352985679" expanded="true" signature="301:1510" ph="{...}" />
-                <marker date="1564352985679" expanded="true" signature="373:1507" ph="{...}" />
-                <marker date="1564352985679" expanded="true" signature="527:656" ph="{...}" />
-                <marker date="1564352985679" expanded="true" signature="731:995" ph="{...}" />
-                <marker date="1564352985679" expanded="true" signature="1137:1501" ph="{...}" />
+                <marker date="1564450834975" expanded="false" signature="6:254" ph="..." />
+                <marker date="1564450834975" expanded="true" signature="301:1510" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="373:1507" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="527:656" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="731:995" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="1137:1501" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -138,11 +114,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Granularity.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="18">
               <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding>
-                <marker date="1564352985667" expanded="true" signature="43:150" ph="{...}" />
-                <marker date="1564352985667" expanded="true" signature="73:148" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="43:150" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="73:148" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -151,11 +127,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Measurement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="54">
               <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding>
-                <marker date="1564352985647" expanded="true" signature="58:236" ph="{...}" />
-                <marker date="1564352985647" expanded="true" signature="89:234" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="58:236" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="89:234" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -164,11 +140,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Constants/GeneralConstants.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="18">
               <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding>
-                <marker date="1564352985607" expanded="true" signature="46:148" ph="{...}" />
-                <marker date="1564352985607" expanded="true" signature="89:146" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="46:148" ph="{...}" />
+                <marker date="1564450834975" expanded="true" signature="89:146" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -183,23 +159,29 @@
       <find>addswagge</find>
       <find>useswa</find>
       <find>xml</find>
+      <find>dockerRepo</find>
+      <find>UseDotNet</find>
+      <find>DotNetCoreCLI</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>Api.Core.SolarMeasurements</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Services/ISolarMeasurementsService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Repositories/ISolarMeasurementsRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Services/SolarMeasurementsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Constants/GeneralConstants.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Measurement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Granularity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Repositories/InfluxDbRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56DF2EE3-00EB-4E2E-8EC4-7EAC6F1EFC0A/0f/1d382fb3/NSwagApplicationBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Granularity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Repositories/ISolarMeasurementsRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Services/SolarMeasurementsService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -210,6 +192,9 @@
         <option value="$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Program.cs" />
         <option value="$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj" />
         <option value="$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs" />
+        <option value="$PROJECT_DIR$/NuGet.Config" />
+        <option value="$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Dockerfile" />
+        <option value="$PROJECT_DIR$/azure-pipelines.yml" />
       </list>
     </option>
   </component>
@@ -220,71 +205,46 @@
     <option name="height" value="824" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
+    <navigator currentView="FileSystemExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer">
         <subPane>
           <expand>
             <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Api.Core.SolarMeasurements" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Api.Core.SolarMeasurements" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Constants" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Repositories" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Api.Core.SolarMeasurements" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Services" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Api.Core.SolarMeasurements" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Api.Core.SolarMeasurements" type="34e6ba20:FileSystemExplorerNode" />
             </path>
           </expand>
           <select />
         </subPane>
-        <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -372,11 +332,148 @@
       <updated>1564299127798</updated>
       <workItem from="1564299134632" duration="647000" />
       <workItem from="1564352782602" duration="3428000" />
+      <workItem from="1564474665483" duration="1269000" />
+      <workItem from="1564554877640" duration="3308000" />
+      <workItem from="1564641444136" duration="12557000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated pipeline">
+      <created>1564657901813</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564657901813</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated pipeline">
+      <created>1564658000315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658000315</updated>
+    </task>
+    <task id="LOCAL-00003" summary="files for the build">
+      <created>1564658104198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658104198</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated pipeline">
+      <created>1564658301612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658301612</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated pipeline">
+      <created>1564658353482</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658353482</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated pipeline">
+      <created>1564658508856</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658508856</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated pipeline">
+      <created>1564685644569</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1564685644569</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated pipeline">
+      <created>1564685763014</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564685763014</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated pipeline">
+      <created>1564685880588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564685880588</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated pipeline">
+      <created>1564686078002</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1564686078002</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated pipeline">
+      <created>1564686212654</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1564686212654</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated pipeline">
+      <created>1564686407502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1564686407502</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated pipeline">
+      <created>1564686656021</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1564686656021</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Updated pipeline">
+      <created>1564721356348</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564721356348</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Updated pipeline">
+      <created>1564727991695</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564727991695</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Updated pipeline">
+      <created>1564728405483</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1564728405483</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updated pipeline">
+      <created>1564728770143</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1564728770143</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Updated pipeline">
+      <created>1564729606331</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1564729606332</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Updated pipeline">
+      <created>1564729919519</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1564729919519</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4075000" />
+    <option name="totallyTimeSpent" value="21209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +485,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1494" height="871" extended-state="6" />
+    <frame x="-3" y="0" width="1494" height="872" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -403,13 +500,13 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Docker" order="9" weight="0.15989515" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932796" weight="0.32896462" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="REST Client" order="13" />
-      <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32896462" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50067204" side_tool="true" weight="0.32896462" />
       <window_info anchor="bottom" id="Build" order="16" weight="0.32984293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -421,6 +518,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="files for the build" />
+    <MESSAGE value="Updated pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pipeline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,19 +548,80 @@
     <entry file="file://$PROJECT_DIR$/Api.Core.SolarMeasurements.sln">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56DF2EE3-00EB-4E2E-8EC4-7EAC6F1EFC0A/0f/1d382fb3/NSwagApplicationBuilderExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
+          <folding>
+            <marker date="1564450834975" expanded="true" signature="708:5025" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="735:5023" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="794:857" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="921:1094" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
+            <marker date="1564450834975" expanded="true" signature="1161:3286" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1634:2556" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1703:2140" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1961:2122" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="3008:3276" ph="/* Add custom provider ... */" />
+            <marker date="1564450834975" expanded="true" signature="3474:4702" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="3606:3683" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="3700:3903" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="3957:4062" ph="/* app.UseAuthentication(); ... */" />
+            <marker date="1564450834975" expanded="true" signature="4226:4296" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="4435:4551" ph="/* Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), ... */" />
+            <marker date="1564450834975" expanded="true" signature="4598:4690" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="4746:4818" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="4860:4929" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="4973:5017" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+          <folding>
+            <marker date="1564450834975" expanded="false" signature="6:150" ph="..." />
+            <marker date="1564450834975" expanded="true" signature="188:1814" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="222:1812" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="275:752" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="334:477" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="509:613" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="633:742" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="822:1019" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1067:1602" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1604:1806" ph="/* private static IWebHostBuilder CreateWebHostBuilder(string[] args) =&gt; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Repositories/InfluxDbRepository.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding>
-            <marker date="1564352986191" expanded="true" signature="6:197" ph="..." />
-            <marker date="1564352986191" expanded="true" signature="248:1700" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="318:1698" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="503:691" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="801:1088" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="974:1028" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="1163:1485" ph="{...}" />
-            <marker date="1564352986191" expanded="true" signature="1623:1692" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="6:197" ph="..." />
+            <marker date="1564450834975" expanded="true" signature="248:1700" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="318:1698" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="503:691" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="801:1088" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="974:1028" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1163:1485" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1623:1692" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -458,9 +631,9 @@
         <state relative-caret-position="36">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding>
-            <marker date="1564352986203" expanded="false" signature="6:118" ph="..." />
-            <marker date="1564352986203" expanded="true" signature="169:441" ph="{...}" />
-            <marker date="1564352986203" expanded="true" signature="221:439" ph="{...}" />
+            <marker date="1564450834975" expanded="false" signature="6:118" ph="..." />
+            <marker date="1564450834975" expanded="true" signature="169:441" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="221:439" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -470,9 +643,9 @@
         <state relative-caret-position="36">
           <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding>
-            <marker date="1564352986179" expanded="false" signature="6:118" ph="..." />
-            <marker date="1564352986179" expanded="true" signature="165:419" ph="{...}" />
-            <marker date="1564352986179" expanded="true" signature="214:417" ph="{...}" />
+            <marker date="1564450834975" expanded="false" signature="6:118" ph="..." />
+            <marker date="1564450834975" expanded="true" signature="165:419" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="214:417" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -482,108 +655,67 @@
         <state relative-caret-position="54">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
-            <marker date="1564352985679" expanded="false" signature="6:254" ph="..." />
-            <marker date="1564352985679" expanded="true" signature="301:1510" ph="{...}" />
-            <marker date="1564352985679" expanded="true" signature="373:1507" ph="{...}" />
-            <marker date="1564352985679" expanded="true" signature="527:656" ph="{...}" />
-            <marker date="1564352985679" expanded="true" signature="731:995" ph="{...}" />
-            <marker date="1564352985679" expanded="true" signature="1137:1501" ph="{...}" />
+            <marker date="1564450834975" expanded="false" signature="6:254" ph="..." />
+            <marker date="1564450834975" expanded="true" signature="301:1510" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="373:1507" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="527:656" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="731:995" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="1137:1501" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Granularity.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="18">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           <folding>
-            <marker date="1564352985667" expanded="true" signature="43:150" ph="{...}" />
-            <marker date="1564352985667" expanded="true" signature="73:148" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="43:150" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="73:148" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Models/Measurement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="54">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <marker date="1564352985647" expanded="true" signature="58:236" ph="{...}" />
-            <marker date="1564352985647" expanded="true" signature="89:234" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="58:236" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="89:234" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Constants/GeneralConstants.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="18">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding>
-            <marker date="1564352985607" expanded="true" signature="46:148" ph="{...}" />
-            <marker date="1564352985607" expanded="true" signature="89:146" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="46:148" ph="{...}" />
+            <marker date="1564450834975" expanded="true" signature="89:146" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56DF2EE3-00EB-4E2E-8EC4-7EAC6F1EFC0A/0f/1d382fb3/NSwagApplicationBuilderExtensions.cs">
+    <entry file="file://$PROJECT_DIR$/NuGet.Config">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        <state relative-caret-position="90">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Program.cs">
+    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-          <folding>
-            <marker date="1564369195073" expanded="false" signature="6:150" ph="..." />
-            <marker date="1564369195073" expanded="true" signature="188:1814" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="222:1812" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="275:752" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="334:477" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="509:613" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="633:742" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="822:1019" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="1067:1602" ph="{...}" />
-            <marker date="1564369195073" expanded="true" signature="1604:1806" ph="/* private static IWebHostBuilder CreateWebHostBuilder(string[] args) =&gt; ... */" />
-          </folding>
+        <state relative-caret-position="54">
+          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Api.Core.SolarMeasurements.csproj">
+    <entry file="file://$PROJECT_DIR$/azure-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
-          <folding>
-            <marker date="1564369340488" expanded="true" signature="6:670" ph="..." />
-            <marker date="1564369340488" expanded="true" signature="708:5025" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="735:5023" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="794:857" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="921:1094" ph="/* This method gets called by the runtime. Use this method to add services to the container. ... */" />
-            <marker date="1564369340488" expanded="true" signature="1161:3286" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="1634:2556" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="1703:2140" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="1961:2122" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="3008:3276" ph="/* Add custom provider ... */" />
-            <marker date="1564369340488" expanded="true" signature="3474:4702" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="3606:3683" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="3700:3903" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="3957:4062" ph="/* app.UseAuthentication(); ... */" />
-            <marker date="1564369340488" expanded="true" signature="4226:4296" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="4435:4551" ph="/* Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), ... */" />
-            <marker date="1564369340488" expanded="true" signature="4598:4690" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="4746:4818" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="4860:4929" ph="{...}" />
-            <marker date="1564369340488" expanded="true" signature="4973:5017" ph="{...}" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="201" column="22" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
         </state>
       </provider>
     </entry>

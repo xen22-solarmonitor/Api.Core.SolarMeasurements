@@ -4,7 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+  branches:
+    include:
+      - master
+      - feature/*
 
 # pool:
 #   vmImage: 'ubuntu-latest'
@@ -16,6 +19,11 @@ variables:
   dockerId: 'xen22'
   dockerRepo: 'solarmonitor'
 
+  # Azure DevOps variables are transformed into environment variables, with these variables we
+  # avoid the first time experience and telemetry to speed up the build.
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+  
 stages:
 
 #############################################################################################        
@@ -56,16 +64,18 @@ stages:
       inputs:
         command: 'build'
         projects: './Api.Core.SolarMeasurements.sln'
-        arguments: '--no-restore --configuration $(buildConfiguration)'
+        configuration: '$(BuildConfiguration)'
+        arguments: '--no-restore'
 
     - task: DotNetCoreCLI@2
       displayName: 'Publish API binaries'
       inputs:
         command: 'publish'
         projects: './Api.Core.SolarMeasurements.sln'
-        arguments: '--no-build --configuration $(buildConfiguration)'
         zipAfterPublish: false
         publishWebProjects: true
+        configuration: '$(BuildConfiguration)'
+        nobuild: true
         
     - bash: ls -la $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0
 
@@ -127,8 +137,10 @@ stages:
             command: 'test'
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/unit/Api.Core.SolarMeasurementsUnitTests/Api.Core.SolarMeasurementsUnitTests.csproj'
             testRunTitle: 'Run unit tests'
-            arguments: '--no-build --configuration $(buildConfiguration)'
-            
+            publishTestResults: true
+            nobuild: true
+            configuration: '$(BuildConfiguration)'
+
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
 
@@ -158,7 +170,9 @@ stages:
             command: 'test'
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/test/integration/Api.Core.SolarMeasurementsIntegrationTests/Api.Core.SolarMeasurementsIntegrationTests.csproj'
             testRunTitle: 'Run integration tests'
-            arguments: '--no-build --configuration $(buildConfiguration)'
+            publishTestResults: true
+            nobuild: true
+            configuration: '$(BuildConfiguration)'
 
         - bash: echo "Publish results..."
         - bash: echo "Save coverage report..."
@@ -184,6 +198,8 @@ stages:
           
         - download: current
           artifact: Dockerfile
+          
+        - bash: ls -lF $(Pipeline.Workspace)
 
         - task: Docker@2
           displayName: 'Login to DockerHub'
