@@ -64,6 +64,8 @@ stages:
         command: 'publish'
         projects: './Api.Core.SolarMeasurements.sln'
         arguments: '--no-build --configuration $(buildConfiguration)'
+        zipAfterPublish: false
+        publishWebProjects: true
         
     - bash: ls -la $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0
 
