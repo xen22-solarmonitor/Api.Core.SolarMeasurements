@@ -73,7 +73,11 @@ stages:
       displayName: 'Archive API binaries'
       artifact: ApiBinaries
 
-# Note: we cannot publish just the binaries for the unit and integration tests because we also need the source code
+    - publish: $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/Dockerfile
+      displayName: 'Archive Dockerfile'
+      artifact: Dockerfile
+
+      # Note: we cannot publish just the binaries for the unit and integration tests because we also need the source code
 #       when we do code coverage
 #    - publish: $(System.DefaultWorkingDirectory)/test/unit/Api.Core.SolarMeasurementsUnitTests/bin/$(buildConfiguration)/netcoreapp3.0/publish/
 #      displayName: 'Archive Unit test binaries'
@@ -140,7 +144,7 @@ stages:
 
         - download: current
           artifact: BuiltSourceTree
-            
+
         - task: UseDotNet@2
           displayName: 'Install .NET Core 3.0 SDK'
           inputs:
@@ -172,6 +176,13 @@ stages:
         vmImage: 'ubuntu-latest'
 
       steps:
+        - checkout: none
+
+        - download: current
+          artifact: ApiBinaries
+          
+        - download: current
+          artifact: Dockerfile
 
         - task: Docker@2
           displayName: 'Login to DockerHub'
@@ -183,7 +194,7 @@ stages:
           displayName: 'Create Docker image'
           inputs:
             command: 'build'
-            Dockerfile: './src/Api.Core.SolarMeasurements/Dockerfile'
+            Dockerfile: './Dockerfile'
             tags: '$(dockerId)/Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
 
         - task: Docker@2
