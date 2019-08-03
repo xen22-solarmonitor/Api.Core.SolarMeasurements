@@ -220,6 +220,7 @@ stages:
             command: 'push'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
             tags: '$(dockerId)/Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
+            repository: '$(dockerRepo)'
 
     - job: CreateApiProxy
       displayName: 'Create and publish API Proxy to NuGet repo'
