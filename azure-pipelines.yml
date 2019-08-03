@@ -220,7 +220,7 @@ stages:
           inputs:
             command: 'buildAndPush'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: 'Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
+            tags: 'api.core.solarmeasurements:$(version)-$(Build.BuildId)'
             repository: '$(dockerId)/$(dockerRepo)'
 
     - job: CreateApiProxy
