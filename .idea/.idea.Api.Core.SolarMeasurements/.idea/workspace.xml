@@ -5,7 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/azure-pipelines.yml" line="195" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c3b1fad-4140-4cff-9c3c-2b9b16938103" name="Default Changelist" comment="">
+    <list default="true" id="1c3b1fad-4140-4cff-9c3c-2b9b16938103" name="Default Changelist" comment="Updated pipeline">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Api.Core.SolarMeasurements/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/azure-pipelines.yml" beforeDir="false" afterPath="$PROJECT_DIR$/azure-pipelines.yml" afterDir="false" />
     </list>
@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/azure-pipelines.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="209" column="68" selection-start-line="209" selection-start-column="68" selection-end-line="209" selection-end-column="68" />
+            <state relative-caret-position="145">
+              <caret line="214" column="19" selection-start-line="214" selection-start-column="19" selection-end-line="214" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+            <state relative-caret-position="72">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -156,10 +156,11 @@
       <find>addswagge</find>
       <find>useswa</find>
       <find>xml</find>
-      <find>dockerRepo</find>
       <find>UseDotNet</find>
       <find>BuildConfiguration</find>
       <find>DotNetCoreCLI</find>
+      <find>dockerId</find>
+      <find>dockerRepo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -197,11 +198,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="91" />
-    <option name="y" value="20" />
-    <option name="width" value="1394" />
-    <option name="height" value="824" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1488" />
+    <option name="height" value="868" />
   </component>
   <component name="ProjectView">
     <navigator currentView="FileSystemExplorer" proportions="" version="1">
@@ -333,7 +332,7 @@
       <workItem from="1564352782602" duration="3428000" />
       <workItem from="1564474665483" duration="1269000" />
       <workItem from="1564554877640" duration="3308000" />
-      <workItem from="1564641444136" duration="13809000" />
+      <workItem from="1564641444136" duration="18008000" />
     </task>
     <task id="LOCAL-00001" summary="Updated pipeline">
       <created>1564657901813</created>
@@ -496,11 +495,53 @@
       <option name="project" value="LOCAL" />
       <updated>1564739709546</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updated pipeline">
+      <created>1564739927874</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1564739927874</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated pipeline">
+      <created>1564819806811</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1564819806811</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updated pipeline">
+      <created>1564820226814</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1564820226814</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Updated pipeline">
+      <created>1564821284349</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1564821284349</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Updated pipeline">
+      <created>1564830206940</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1564830206940</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Updated pipeline">
+      <created>1564830646461</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1564830646461</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22461000" />
+    <option name="totallyTimeSpent" value="26660000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,10 +553,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1494" height="872" extended-state="6" />
+    <frame x="0" y="0" width="1488" height="868" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25101215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -525,12 +566,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32984293" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32896462" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" weight="0.15989515" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932796" weight="0.32896462" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49932796" visible="true" weight="0.33069828" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32896462" />
       <window_info anchor="bottom" id="REST Client" order="13" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32896462" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50067204" side_tool="true" weight="0.32896462" />
@@ -734,15 +775,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Api.Core.SolarMeasurements/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/azure-pipelines.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="209" column="68" selection-start-line="209" selection-start-column="68" selection-end-line="209" selection-end-column="68" />
+        <state relative-caret-position="145">
+          <caret line="214" column="19" selection-start-line="214" selection-start-column="19" selection-end-line="214" selection-end-column="19" />
         </state>
       </provider>
     </entry>

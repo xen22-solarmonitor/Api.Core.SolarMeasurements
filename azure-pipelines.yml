@@ -212,7 +212,8 @@ stages:
           inputs:
             command: 'build'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: '$(dockerId)/Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
+            tags: 'Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
+            repository: '$(dockerId)/$(dockerRepo)'
 
         - task: Docker@2
           displayName: 'Push Docker image'
