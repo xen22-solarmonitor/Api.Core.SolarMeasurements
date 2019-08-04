@@ -15,9 +15,8 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   solutionName: 'Api.Core.SolarMeasurements'
-  version: '1.0'
-  dockerId: 'xen22'
-  dockerRepo: 'solarmonitor'
+  version: '1.0.0'
+  dockerId: 'solarmonitor'
 
   # Azure DevOps variables are transformed into environment variables, with these variables we
   # avoid the first time experience and telemetry to speed up the build.
@@ -207,24 +206,23 @@ stages:
             command: 'login'
             containerRegistry: 'DockerHub connection (xen22)'
 
-#        - task: Docker@2
-#          displayName: 'Create Docker image'
-#          inputs:
-#            command: 'build'
-#            Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-#            tags: 'Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
-            #repository: '$(dockerId)/$(dockerRepo)'
+        - task: Docker@2
+          displayName: 'Create Docker image'
+          inputs:
+            command: 'build'
+            Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
+            tags: '$(version)-$(Build.BuildId)'
+            repository: '$(dockerId)/api.core.solarmeasurements'
             
         #- script: docker build -f $(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile -t $(dockerId)/api.core.solarmeasurements:$(version)-$(Build.BuildId) .  # add options to this command to meet your needs
 
         - task: Docker@2
           displayName: 'Push Docker image'
           inputs:
-            command: 'buildAndPush'
+            command: 'push'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: 'api-core-solarmeasurements:$(version)-$(Build.BuildId)'
-#            repository: '$(dockerId)/$(dockerRepo)'
-            repository: 'xen22/solarmonitor'
+            tags: '$(version)-$(Build.BuildId)'
+            repository: '$(dockerId)/api.core.solarmeasurements'
 
     - job: CreateApiProxy
       displayName: 'Create and publish API Proxy to NuGet repo'
