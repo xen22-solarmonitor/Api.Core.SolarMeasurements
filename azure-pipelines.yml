@@ -223,7 +223,8 @@ stages:
             command: 'buildAndPush'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
             tags: 'api-core-solarmeasurements:$(version)-$(Build.BuildId)'
-            repository: '$(dockerId)/$(dockerRepo)'
+#            repository: '$(dockerId)/$(dockerRepo)'
+            repository: 'xen22/solarmonitor'
 
     - job: CreateApiProxy
       displayName: 'Create and publish API Proxy to NuGet repo'
