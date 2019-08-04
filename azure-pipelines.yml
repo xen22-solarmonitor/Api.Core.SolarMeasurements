@@ -214,13 +214,15 @@ stages:
 #            Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
 #            tags: 'Api.Core.SolarMeasurements:$(version)-$(Build.BuildId)'
             #repository: '$(dockerId)/$(dockerRepo)'
+            
+        #- script: docker build -f $(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile -t $(dockerId)/api.core.solarmeasurements:$(version)-$(Build.BuildId) .  # add options to this command to meet your needs
 
         - task: Docker@2
           displayName: 'Push Docker image'
           inputs:
             command: 'buildAndPush'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: 'api.core.solarmeasurements:$(version)-$(Build.BuildId)'
+            tags: 'api-core-solarmeasurements:$(version)-$(Build.BuildId)'
             repository: '$(dockerId)/$(dockerRepo)'
 
     - job: CreateApiProxy
