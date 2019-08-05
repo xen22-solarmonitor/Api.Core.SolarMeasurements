@@ -50,6 +50,12 @@ stages:
         version: '3.0.100-preview6-012264'
         includePreviewVersions: true
         
+    # create links to .NET Core Runtimes from v. 2.2 because it is needed by 'dotnet swagger' CLI
+    - bash ln -s /usr/share/dotnet/shared/Microsoft.NETCore.App/2.2.?/ $(dirname `which dotnet`)/shared/Microsoft.NETCore.App
+      displayName: 'Create link to NETCoreApp 2.2 runtime (for dotnet CLI 3.0)'
+    - bash ln -s /usr/share/dotnet/shared/Microsoft.AspNetCore.App/2.2.?/ $(dirname `which dotnet`)/shared/Microsoft.AspNetCore.App
+      displayName: 'Create link to AspNetCore 2.2 runtime (for dotnet CLI 3.0)'
+        
     - task: DotNetCoreCLI@2
       displayName: 'Restore NuGet dependencies'
       inputs:
