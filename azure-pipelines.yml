@@ -39,6 +39,10 @@ stages:
       vmImage: 'ubuntu-latest'
 
     steps:
+    
+    - checkout: self
+      submodules: true
+
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
 
