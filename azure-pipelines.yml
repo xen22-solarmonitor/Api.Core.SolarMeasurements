@@ -38,7 +38,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
 
-   steps:
+    steps:
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
 
