@@ -38,6 +38,9 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
 
+    - bash: sudo apt-get install jq
+      displayName: 'Installing build dependency: jq'
+
     steps:
     # - task: DotNetCoreInstaller@0
     #   displayName: 'Install .net core 3.0 (preview)'

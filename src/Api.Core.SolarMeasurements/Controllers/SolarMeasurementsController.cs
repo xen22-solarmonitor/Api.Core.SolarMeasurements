@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Core.SolarMeasurements.Models;
@@ -12,8 +13,11 @@ using Microsoft.Extensions.Logging;
 namespace Api.Core.SolarMeasurements.Controllers
 {
 
-    //[ApiVersion("1")]
-    [Route("api/v1/[controller]")]
+    // TODO: enable API versioning when Microsoft.AspNetCore.Mvc.Versioning package supports .NET Core 3.0
+    //[ApiVersion("1.0")]
+    //[Route("api/v{version:apiVersion}/[controller]")]
+    // TODO: revert back to v1 instead of v1.0 when autorest supports it
+    [Route("api/v1.0/[controller]")]
     [Produces("application/json")]
     [ApiController]
     [ApiConventionType(typeof(DefaultApiConventions))]
@@ -50,7 +54,9 @@ namespace Api.Core.SolarMeasurements.Controllers
         [HttpGet]
         [Route("")]
         public async Task<ActionResult<IEnumerable<Measurement>>> Get(
-            [FromQuery] DateTime startTime, [FromQuery] DateTime endTime, [FromQuery] Granularity granularity)
+            [FromQuery][Required] DateTime startTime, 
+            [FromQuery][Required] DateTime endTime, 
+            [FromQuery][Required] Granularity granularity)
         {
             _logger.LogDebug($"GetMeasurements: startTime: {startTime}, endTime: {endTime}, granularity: {granularity}");
             var measurements = await _service.GetMeasurements(startTime, endTime, granularity);
@@ -58,7 +64,7 @@ namespace Api.Core.SolarMeasurements.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet("{timestamp}")]
         public async Task<ActionResult<Measurement>> Get(DateTime timestamp)
         {
             _logger.LogDebug($"GetMeasurement: timestamp: {timestamp}");

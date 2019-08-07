@@ -1,0 +1,17 @@
+{
+  "name": "api.core.solarmeasurementsproxy",
+  "version": "1.0.0",
+  "description": "dummy package.json used to install dependencies for the autorest tool",
+  "main": "",
+  "author": "Ciprian Toader",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@microsoft.azure/autorest-core": "~3.0.5530",
+    "@microsoft.azure/autorest.csharp": "~2.3.82",
+    "@microsoft.azure/autorest.modeler": "^3.0.53",
+    "autorest": "^3.0.5229"
+  }
+}

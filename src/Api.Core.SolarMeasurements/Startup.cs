@@ -35,6 +35,9 @@ namespace Api.Core.SolarMeasurements
         {
             services.AddControllers();
 
+            // TODO: enable API versioning when Microsoft.AspNetCore.Mvc.Versioning package supports .NET Core 3.0
+            //services.AddApiVersioning();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             
             // bind the configuration to our SolarConfig configuration class
@@ -44,7 +47,7 @@ namespace Api.Core.SolarMeasurements
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                c.SwaggerDoc("v1.0", new OpenApiInfo
                 {
                     Title = GetTitle(),
                     Version = GetVersion(),
@@ -119,7 +122,7 @@ namespace Api.Core.SolarMeasurements
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", GetApiName());
+                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", GetApiName());
             });
         }
 
@@ -135,7 +138,7 @@ namespace Api.Core.SolarMeasurements
 
         private static string GetVersion()
         {
-            return "1";
+            return "1.0";
         }
     }
 }
