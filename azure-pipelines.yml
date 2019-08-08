@@ -50,6 +50,42 @@ stages:
       inputs:
         #updateAssemblyInfo: true
         preferBundledVersion: false
+        
+    - task: Assembly-Info-NetFramework@2
+      displayName: 'Version API'
+      inputs:
+        Configuration: '$(buildConfiguration)'
+        Path: '$(Build.SourcesDirectory)/src/Api.Core.SolarMeasurements'
+        FileNames: '**/AssemblyInfo.cs'
+        InsertAttributes: false
+        FileEncoding: 'auto'
+        WriteBOM: false
+        Title: 'Solar measurements Core API'
+        Product: 'SolarMonitor'
+        Description: 'semanticVersion=$(GitVersion.FullSemVer); branch=$(Build.SourceBranch); commit=$(GitVersion.ShortSha)'
+        Company: 'Adaptive Development'
+        Copyright: 'Ciprian Toader'
+        VersionNumber: '$(GitVersion.AssemblySemVer)'
+        FileVersionNumber: '$(GitVersion.AssemblySemFileVer)'
+        InformationalVersion: '$(GitVersion.InformationalVersion)'
+        
+    - task Assembly-Info-NetCore@2
+      displayName: 'Version Proxy client'
+      inputs:
+        Path: '$(Build.SourcesDirectory)/src/Api.Core.SolarMeasurementsProxy'
+        FileNames: '**/*.csproj'
+        InsertAttributes: true
+        FileEncoding: 'auto'
+        WriteBOM: false
+        GeneratePackageOnBuild: false
+        Authors: 'Ciprian Toader'
+        Company: 'Adaptive Development'
+        Product: 'SolarMonitor'
+        Description: 'Solar Measurements Core API'
+        VersionNumber: '$(GitVersion.FullSemVer)'
+        FileVersionNumber: '$(GitVersion.AssemblySemFileVer)'
+        InformationalVersion: '$(GitVersion.InformationalVersion)'
+        PackageVersion: '$(GitVersion.FullSemVer)'
 
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
