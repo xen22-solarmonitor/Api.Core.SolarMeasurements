@@ -51,6 +51,11 @@ stages:
         #updateAssemblyInfo: true
         preferBundledVersion: false
         
+    - bash: |
+        echo "##vso[task.setvariable variable=version]$(GitVersion.FullSemVer)"
+        echo "Azure pipelines version variable is: $(version)"
+      displayName: 'Saving GitVersion.FullSemVer into global version var'
+        
     - task: Assembly-Info-NetFramework@2
       displayName: 'Version API'
       inputs:
@@ -274,7 +279,7 @@ stages:
           inputs:
             command: 'build'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: '$(version)-$(Build.BuildId)'
+            tags: '$(version)'
             repository: '$(dockerId)/api.core.solarmeasurements'
             
         #- script: docker build -f $(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile -t $(dockerId)/api.core.solarmeasurements:$(version)-$(Build.BuildId) .  # add options to this command to meet your needs
@@ -284,7 +289,7 @@ stages:
           inputs:
             command: 'push'
             Dockerfile: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurements/Dockerfile'
-            tags: '$(version)-$(Build.BuildId)'
+            tags: '$(version)'
             repository: '$(dockerId)/api.core.solarmeasurements'
 
     - job: CreateApiProxy
