@@ -7,7 +7,9 @@ trigger:
   branches:
     include:
       - master
+      - develop
       - feature/*
+      - hotfix/*
 
 # pool:
 #   vmImage: 'ubuntu-latest'
@@ -42,6 +44,12 @@ stages:
     
     - checkout: self
       submodules: true
+      
+    - task: GitVersion@4
+      displayName: 'GitVersion'
+      inputs:
+        #updateAssemblyInfo: true
+        preferBundledVersion: false
 
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
