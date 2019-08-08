@@ -42,12 +42,12 @@ namespace Api.Core.SolarMeasurements.Controllers
         /// <remarks>
         /// Sample request:
         ///
-        ///     GET /SolarMeasurements?startTime=2016-01-01&endTime=2016-01-10&granularity=2
+        ///     GET /SolarMeasurements?startTime=2016-01-01T12:00:00&endTime=2016-01-10T12:00:00&granularity=2
         ///
         /// </remarks>
         /// <param name="startTime">Start timestamp</param>
         /// <param name="endTime">End timestamp</param>
-        /// <param name="granularity"></param>
+        /// <param name="granularity">how granular should the results be</param>
         /// <returns></returns>
         /// <response code="200">Returns the requested set of measurements</response>
         /// <response code="400">If no measurements are found</response>

@@ -51,7 +51,7 @@ namespace Api.Core.SolarMeasurements
                 {
                     Title = GetTitle(),
                     Version = GetVersion(),
-                    Description = "A simple example API for retrieving measurements from Solar sites",
+                    Description = "A simple API for retrieving measurements from Solar sites",
                     License = new OpenApiLicense
                     {
                         Name = "Licensed under MIT Licence",

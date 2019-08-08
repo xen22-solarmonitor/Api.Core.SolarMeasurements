@@ -16,7 +16,7 @@ namespace Api.Core.SolarMeasurementsProxy
     using System.Net.Http;
 
     /// <summary>
-    /// A simple example API for retrieving measurements from Solar sites
+    /// A simple API for retrieving measurements from Solar sites
     /// </summary>
     public partial class SolarMeasurementsCoreAPI : ServiceClient<SolarMeasurementsCoreAPI>, ISolarMeasurementsCoreAPI
     {

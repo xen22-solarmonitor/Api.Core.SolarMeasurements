@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "SolarMeasurements Core API",
-    "description": "A simple example API for retrieving measurements from Solar sites",
+    "description": "A simple API for retrieving measurements from Solar sites",
     "license": {
       "name": "Licensed under MIT Licence",
       "url": "http://opensource.org/licenses/MIT"

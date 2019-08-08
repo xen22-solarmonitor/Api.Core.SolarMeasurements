@@ -11,7 +11,7 @@ namespace Api.Core.SolarMeasurementsProxy
     using Newtonsoft.Json;
 
     /// <summary>
-    /// A simple example API for retrieving measurements from Solar sites
+    /// A simple API for retrieving measurements from Solar sites
     /// </summary>
     public partial interface ISolarMeasurementsCoreAPI : System.IDisposable
     {
