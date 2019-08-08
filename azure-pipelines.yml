@@ -334,7 +334,7 @@ stages:
 
         - task: DotNetCoreCLI@2
           displayName: 'Create Proxy Client Nuget package'
-          condition: eq(${{ swaggerChanged }}, 0)
+          condition: eq('$(swaggerChanged)', '0')
           inputs:
             command: 'custom'
             projects: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurementsProxy/*.csproj'
@@ -343,7 +343,7 @@ stages:
 
         - task: NuGetCommand@2
           displayName: 'Publish Proxy Client Nuget package'
-          condition: eq(${{ swaggerChanged }}, 0)
+          condition: eq('$(swaggerChanged)', '0')
           inputs:
             command: 'push'
             nuGetFeedType: 'external'
