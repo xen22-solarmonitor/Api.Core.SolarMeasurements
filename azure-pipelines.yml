@@ -45,7 +45,7 @@ stages:
     - checkout: self
       submodules: true
       
-    - task: gittools.gitversion.gitversion-task.GitVersion@4
+    - task: GitVersion@5
       displayName: 'GitVersion'
       inputs:
         #updateAssemblyInfo: true
