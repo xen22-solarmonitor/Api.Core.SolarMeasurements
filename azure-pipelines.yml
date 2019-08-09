@@ -282,7 +282,7 @@ stages:
         #ApiBinaries $(Pipeline.Workspace)/Dockerfile $(Pipeline.Workspace)/TestResults
           
         - download: current
-            artifact: variables
+          artifact: variables
 
         # Read the variable from the file under pipeline variables artifact, then expose it in the job
         - task: setvar@0
