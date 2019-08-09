@@ -295,9 +295,10 @@ stages:
             cat $(Pipeline.Workspace)/variables/buildVersion
             export BUILD_VERSION=`cat $(Pipeline.Workspace)/variables/buildVersion`
             echo buildVer is $BUILD_VERSION
-            echo "##vso[task.setvariable variable=buildVersion;]$BUILD_VERSION"
+            echo '##vso[task.setvariable variable=buildVersion;]'$BUILD_VERSION
           displayName: 'Retrieve buildVersion'
-        - bash: echo Retrieved buildVersion $buildVersion
+          
+        - bash: echo Retrieved buildVersion $(buildVersion)
           displayName: 'Log buildVersion $(buildVersion)'
 
         - task: Docker@2
