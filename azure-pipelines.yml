@@ -50,15 +50,14 @@ stages:
       inputs:
         #updateAssemblyInfo: true
         preferBundledVersion: false
-        
-    - bash: |
-      mkdir -p $(Pipeline.Workspace)/variables
-      echo "$(GitVersion.FullSemVer)" > $(Pipeline.Workspace)/variables/buildVersion
 
-    # Publish the version folder as pipeline artifact
-    - publish: $(Pipeline.Workspace)/variables
-      artifact: variables        
-        
+    # this step just saves the version to a file - the whole variables folder will be published
+    # as an archive at the end of this stage so that it can be downloaded and used in later stages
+    - bash: |
+        mkdir -p $(Pipeline.Workspace)/variables
+        echo "$(GitVersion.FullSemVer)" > $(Pipeline.Workspace)/variables/buildVersion
+      displayName: 'Saving buildVersion variable into a file'
+
 #    - task: setvar@0
 #    - bash: echo $(GitVersion.FullSemVer) | setvar -name version -isOutput
 #      displayName: 'Saving GitVersion.FullSemVer into global version var'
@@ -173,6 +172,12 @@ stages:
     - publish: $(System.DefaultWorkingDirectory)
       displayName: 'Archive fully built source tree'
       artifact: BuiltSourceTree
+
+      # Publish all variables from this stage as a pipeline artifact
+    - publish: $(Pipeline.Workspace)/variables
+      displayName: 'Publishing variables for a later stage'
+      artifact: variables
+
 
   #############################################################################################        
   # Stage: Tests
