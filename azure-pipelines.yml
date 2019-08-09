@@ -282,12 +282,15 @@ stages:
         #ApiBinaries $(Pipeline.Workspace)/Dockerfile $(Pipeline.Workspace)/TestResults
           
         - download: current
+          displayName: 'Retrieve "variables" from pipeline archive'
           artifact: variables
 
         # Read the variable from the file under pipeline variables artifact, then expose it in the job
         - task: setvar@0
-        - bash: $(cat $(Pipeline.Workspace)/variables/buildVersion) | setvar -name buildVersion -isOutput
-        - bash: 'echo Retrieved buildVersion: $(buildVersion)'
+        - bash: cat $(Pipeline.Workspace)/variables/buildVersion | setvar -name buildVersion -isOutput
+          displayName: 'Retrieve buildVersion'
+        - bash: echo "Retrieved buildVersion $(buildVersion)"
+          displayName: 'Log buildVersion $(buildVersion)'
 
         - task: Docker@2
           displayName: 'Login to DockerHub'
