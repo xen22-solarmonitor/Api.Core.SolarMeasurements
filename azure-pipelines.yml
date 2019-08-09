@@ -55,7 +55,7 @@ stages:
     # as an archive at the end of this stage so that it can be downloaded and used in later stages
     - bash: |
         mkdir -p $(Pipeline.Workspace)/variables
-        echo "$(GitVersion.FullSemVer)" > $(Pipeline.Workspace)/variables/buildVersion
+        echo "$(GitVersion.SemVer)" > $(Pipeline.Workspace)/variables/buildVersion
         cat $(Pipeline.Workspace)/variables/buildVersion
       displayName: 'Saving buildVersion variable into a file'
 
@@ -184,7 +184,7 @@ stages:
         custom: 'pack'
         arguments: '--no-build --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
 
-    - publish: $(System.DefaultWorkingDirectory)/*.nupkg
+    - publish: $(System.DefaultWorkingDirectory)/Api.Core.SolarMeasurementsProxy.$(GitVersion.SemVer).nupkg
       displayName: 'Archive Nuget package'
       condition: ne('$(swaggerChanged)', '0')
       artifact: ProxyNugetPackage
