@@ -295,7 +295,7 @@ stages:
             cat $(Pipeline.Workspace)/variables/buildVersion
             buildVer=`cat $(Pipeline.Workspace)/variables/buildVersion`
             echo buildVer is $buildVer
-            echo "##vso[task.setvariable variable=buildVer]$buildVer"
+            echo '##vso[task.setvariable variable=buildVer;]$buildVer'
           displayName: 'Retrieve buildVersion'
         - bash: echo Retrieved buildVersion $buildVersion
           displayName: 'Log buildVersion $(buildVersion)'
