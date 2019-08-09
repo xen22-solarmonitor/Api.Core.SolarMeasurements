@@ -182,9 +182,9 @@ stages:
         command: 'custom'
         projects: '$(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurementsProxy/*.csproj'
         custom: 'pack'
-        arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactsStagingDirectory)'
+        arguments: '--no-build --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
 
-    - publish: $(Build.ArtifactsStagingDirectory)/*.nupkg
+    - publish: $(System.DefaultWorkingDirectory)/*.nupkg
       displayName: 'Archive Nuget package'
       condition: ne('$(swaggerChanged)', '0')
       artifact: ProxyNugetPackage
