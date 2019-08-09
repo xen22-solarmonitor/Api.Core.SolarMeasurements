@@ -56,6 +56,7 @@ stages:
     - bash: |
         mkdir -p $(Pipeline.Workspace)/variables
         echo "$(GitVersion.FullSemVer)" > $(Pipeline.Workspace)/variables/buildVersion
+        cat $(Pipeline.Workspace)/variables/buildVersion
       displayName: 'Saving buildVersion variable into a file'
 
 #    - task: setvar@0
@@ -290,10 +291,13 @@ stages:
         #- bash: cat $(Pipeline.Workspace)/variables/buildVersion | setvar -name buildVersion -isOutput
         #  displayName: 'Retrieve buildVersion'
         - bash: |
+            ls -la $(Pipeline.Workspace)/variables
+            cat $(Pipeline.Workspace)/variables/buildVersion
             buildVer=`cat $(Pipeline.Workspace)/variables/buildVersion`
+            echo buildVer is $buildVer
             echo "##vso[task.setvariable variable=buildVer]$buildVer"
           displayName: 'Retrieve buildVersion'
-        - bash: echo "Retrieved buildVersion $(buildVersion)"
+        - bash: echo Retrieved buildVersion $buildVersion
           displayName: 'Log buildVersion $(buildVersion)'
 
         - task: Docker@2
