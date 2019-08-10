@@ -50,6 +50,7 @@ stages:
       inputs:
         #updateAssemblyInfo: true
         preferBundledVersion: false
+        mode: ContinuousDeployment
 
     # this step just saves the version to a file - the whole variables folder will be published
     # as an archive at the end of this stage so that it can be downloaded and used in later stages
