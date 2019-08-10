@@ -99,7 +99,8 @@ stages:
         VersionNumber: '$(GitVersion.FullSemVer)'
         FileVersionNumber: '$(GitVersion.AssemblySemFileVer)'
         InformationalVersion: '$(GitVersion.InformationalVersion)'
-        PackageVersion: '$(GitVersion.FullSemVer)'
+        #PackageVersion: '$(GitVersion.FullSemVer)'
+        PackageVersion: '$(GitVersion.NuGetVersionV2).$(GitVersion.CommitsSinceVersionSource)'
 
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
@@ -185,7 +186,7 @@ stages:
         custom: 'pack'
         arguments: '--no-build --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
 
-    - publish: $(System.DefaultWorkingDirectory)/Api.Core.SolarMeasurementsProxy.$(GitVersion.SemVer).nupkg
+    - publish: $(System.DefaultWorkingDirectory)/Api.Core.SolarMeasurementsProxy.$(GitVersion.NuGetVersionV2).$(GitVersion.CommitsSinceVersionSource).nupkg
       displayName: 'Archive Nuget package'
       condition: ne('$(swaggerChanged)', '0')
       artifact: ProxyNugetPackage
