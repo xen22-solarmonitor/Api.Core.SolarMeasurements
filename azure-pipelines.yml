@@ -288,12 +288,15 @@ stages:
         - download: current
           artifact: BuiltSourceTree
 
-        - task: UseDotNet@2
-          displayName: 'Install .NET Core 3.0 SDK'
-          inputs:
-            packageType: 'sdk'
-            version: '$(customDotnetVersion)'
-            includePreviewVersions: true
+        # - task: UseDotNet@2
+        #   displayName: 'Install .NET Core 3.0 SDK'
+        #   inputs:
+        #     packageType: 'sdk'
+        #     version: '$(customDotnetVersion)'
+        #     includePreviewVersions: true
+        - template: './submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+          parameters:
+            sdk: '$(customDotnetVersion)'
 
         - task: DotNetCoreCLI@2
           displayName: 'Run integration tests'
