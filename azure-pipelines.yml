@@ -114,16 +114,6 @@ stages:
     - bash: sudo apt-get install jq
       displayName: 'Installing build dependency: jq'
 
-    # - task: DotNetCoreInstaller@0
-    #   displayName: 'Install .net core 3.0 (preview)'
-    #   inputs:
-    #     version: '$(customDotnetVersion)'
-    # - task: UseDotNet@2
-    #   displayName: 'Install .NET Core 3.0 SDK'
-    #   inputs:
-    #     packageType: 'sdk'
-    #     version: '$(customDotnetVersion)'
-    #     includePreviewVersions: true
     - template: 'azure-pipelines/install-custom-sdk.yml@templates'
       parameters:
         sdk: '$(customDotnetVersion)'
@@ -262,12 +252,6 @@ stages:
         - download: current
           artifact: BuiltSourceTree
             
-        # - task: UseDotNet@2
-        #   displayName: 'Install .NET Core 3.0 SDK'
-        #   inputs:
-        #     packageType: 'sdk'
-        #     version: '$(customDotnetVersion)'
-        #     includePreviewVersions: true
         - template: 'azure-pipelines/install-custom-sdk.yml@templates'
           parameters:
             sdk: '$(customDotnetVersion)'
@@ -297,12 +281,6 @@ stages:
         - download: current
           artifact: BuiltSourceTree
 
-        # - task: UseDotNet@2
-        #   displayName: 'Install .NET Core 3.0 SDK'
-        #   inputs:
-        #     packageType: 'sdk'
-        #     version: '$(customDotnetVersion)'
-        #     includePreviewVersions: true
         - template: 'azure-pipelines/install-custom-sdk.yml@templates'
           parameters:
             sdk: '$(customDotnetVersion)'
@@ -399,12 +377,9 @@ stages:
         swaggerChanged: 100
 
       steps:
-        - task: UseDotNet@2
-          displayName: 'Install .NET Core 3.0 SDK'
-          inputs:
-            packageType: 'sdk'
-            version: '$(customDotnetVersion)'
-            includePreviewVersions: true
+        - template: 'azure-pipelines/install-custom-sdk.yml@templates'
+          parameters:
+            sdk: '$(customDotnetVersion)'
 
         - download: current
           artifact: BuiltSourceTree
