@@ -109,12 +109,15 @@ stages:
     #   displayName: 'Install .net core 3.0 (preview)'
     #   inputs:
     #     version: '$(customDotnetVersion)'
-    - task: UseDotNet@2
-      displayName: 'Install .NET Core 3.0 SDK'
-      inputs:
-        packageType: 'sdk'
-        version: '$(customDotnetVersion)'
-        includePreviewVersions: true
+    # - task: UseDotNet@2
+    #   displayName: 'Install .NET Core 3.0 SDK'
+    #   inputs:
+    #     packageType: 'sdk'
+    #     version: '$(customDotnetVersion)'
+    #     includePreviewVersions: true
+    - template: './submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+      parameters:
+        sdk: '$(customDotnetVersion)'
         
     # create links to .NET Core Runtimes from v. 2.2 because it is needed by 'dotnet swagger' CLI
     - bash: ln -s /usr/share/dotnet/shared/Microsoft.NETCore.App/2.2.?/ $(dirname `which dotnet`)/shared/Microsoft.NETCore.App
