@@ -10,6 +10,13 @@ trigger:
       - develop
       - feature/*
       - hotfix/*
+      - release/*
+
+resources:
+  repositories:
+  - repository: templates
+    type: git
+    name: Common.Infrastructure.CI
 
 # pool:
 #   vmImage: 'ubuntu-latest'
@@ -116,7 +123,7 @@ stages:
     #     packageType: 'sdk'
     #     version: '$(customDotnetVersion)'
     #     includePreviewVersions: true
-    - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+    - template: 'azure-pipelines/install-custom-sdk.yml@templates'
       parameters:
         sdk: '$(customDotnetVersion)'
         
@@ -260,7 +267,7 @@ stages:
         #     packageType: 'sdk'
         #     version: '$(customDotnetVersion)'
         #     includePreviewVersions: true
-        - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+        - template: 'azure-pipelines/install-custom-sdk.yml@templates'
           parameters:
             sdk: '$(customDotnetVersion)'
             
@@ -295,7 +302,7 @@ stages:
         #     packageType: 'sdk'
         #     version: '$(customDotnetVersion)'
         #     includePreviewVersions: true
-        - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+        - template: 'azure-pipelines/install-custom-sdk.yml@templates'
           parameters:
             sdk: '$(customDotnetVersion)'
 
