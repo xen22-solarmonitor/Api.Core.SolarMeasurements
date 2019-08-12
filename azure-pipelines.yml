@@ -45,6 +45,7 @@ stages:
     - checkout: self
       submodules: true
       
+      
     - task: GitVersion@5
       displayName: 'GitVersion'
       inputs:
@@ -115,7 +116,7 @@ stages:
     #     packageType: 'sdk'
     #     version: '$(customDotnetVersion)'
     #     includePreviewVersions: true
-    - template: './submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+    - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
       parameters:
         sdk: '$(customDotnetVersion)'
         
@@ -259,7 +260,7 @@ stages:
         #     packageType: 'sdk'
         #     version: '$(customDotnetVersion)'
         #     includePreviewVersions: true
-        - template: './submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+        - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
           parameters:
             sdk: '$(customDotnetVersion)'
             
@@ -294,7 +295,7 @@ stages:
         #     packageType: 'sdk'
         #     version: '$(customDotnetVersion)'
         #     includePreviewVersions: true
-        - template: './submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
+        - template: 'submodules/Common.Infrastructure.CI/azure-pipelines/install-custom-sdk.yml'
           parameters:
             sdk: '$(customDotnetVersion)'
 
