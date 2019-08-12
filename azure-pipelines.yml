@@ -15,8 +15,8 @@ trigger:
 resources:
   repositories:
   - repository: templates
-    type: git
-    name: Common.Infrastructure.CI
+    type: github
+    name: xen22-solarmonitor/Common.Infrastructure.CI
 
 # pool:
 #   vmImage: 'ubuntu-latest'
