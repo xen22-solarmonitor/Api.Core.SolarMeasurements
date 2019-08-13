@@ -23,6 +23,8 @@ resources:
 #   vmImage: 'ubuntu-latest'
 
 variables:
+  # enable debug logging in the pipeline
+  System.Debug: true
   buildConfiguration: 'Release'
   solutionName: 'Api.Core.SolarMeasurements'
   customDotnetVersion: '3.0.100-preview7-012821'
@@ -57,12 +59,13 @@ stages:
       submodules: true
       
       
-    - task: GitVersion@5
-      displayName: 'GitVersion'
-      inputs:
-        #updateAssemblyInfo: true
-        preferBundledVersion: false
-        mode: ContinuousDeployment
+    # - task: GitVersion@5
+    #   displayName: 'GitVersion'
+    #   inputs:
+    #     #updateAssemblyInfo: true
+    #     preferBundledVersion: false
+    #     mode: ContinuousDeployment
+    - template: 'azure-pipelines/git-version.yml@templates'
 
     # this step just saves the version to a file - the whole variables folder will be published
     # as an archive at the end of this stage so that it can be downloaded and used in later stages
