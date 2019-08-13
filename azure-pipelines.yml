@@ -154,7 +154,7 @@ stages:
     - task: DownloadPipelineArtifact@2
       displayName: 'Retrieve swagger.json from previous build'
       # TODO: review this condition (for this step and all related steps)
-      condition: eq('$(Build.SourceBranch)', 'refs/heads/master')
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
       inputs:
         artifact: 'swagger'
         path: '$(Pipeline.Workspace)'
@@ -172,7 +172,7 @@ stages:
         #echo $? | setvar -name swaggerChanged -isOutput
         echo SWAGGER_CMP_EXIT_CODE=$SWAGGER_CMP_EXIT_CODE
         echo '##vso[task.setvariable variable=swaggerChanged;]'$SWAGGER_CMP_EXIT_CODE
-      condition: eq('$(Build.SourceBranch)', 'refs/heads/master')
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
       displayName: 'Creating Azure pipelines variable swaggerChanged'
 
     #        - bash: |
