@@ -187,7 +187,7 @@ stages:
 
     - task: DotNetCoreCLI@2
       displayName: 'Create Proxy Client Nuget package'
-      condition: ne('$(swaggerChanged)', '0')
+      condition: ne(variables['swaggerChanged'], '0')
       inputs:
         command: 'custom'
         projects: '$(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurementsProxy/*.csproj'
@@ -196,7 +196,7 @@ stages:
 
     - publish: $(System.DefaultWorkingDirectory)/Api.Core.SolarMeasurementsProxy.$(GitVersion.NuGetVersionV2).$(GitVersion.CommitsSinceVersionSource).nupkg
       displayName: 'Archive Nuget package'
-      condition: ne('$(swaggerChanged)', '0')
+      condition: ne(variables['swaggerChanged'], '0')
       artifact: ProxyNugetPackage
 
     - task: PublishBuildArtifacts@1
@@ -409,7 +409,7 @@ stages:
             #echo $? | setvar -name swaggerChanged -isOutput
             echo SWAGGER_CMP_EXIT_CODE=$SWAGGER_CMP_EXIT_CODE
             echo '##vso[task.setvariable variable=swaggerChanged;]'$SWAGGER_CMP_EXIT_CODE
-          condition: ne('$(swaggerChanged)', '0')
+          condition: ne(variables['swaggerChanged'], '0')
           displayName: 'Creating Azure pipelines variable swaggerChanged'
 
 #        - bash: |
@@ -424,13 +424,13 @@ stages:
 
         - download: current 
           displayName: 'Download Nuget package'
-          condition: ne('$(swaggerChanged)', '0')
+          condition: ne(variables['swaggerChanged'], '0')
           artifact: ProxyNugetPackage
             
 
 #        - task: DotNetCoreCLI@2
 #          displayName: 'Create Proxy Client Nuget package'
-#          condition: ne('$(swaggerChanged)', '0')
+#          condition: ne(variables['swaggerChanged'], '0')
 #          inputs:
 #            command: 'custom'
 #            projects: '$(Pipeline.Workspace)/BuiltSourceTree/src/Api.Core.SolarMeasurementsProxy/*.csproj'
@@ -439,7 +439,7 @@ stages:
 
         - task: NuGetCommand@2
           displayName: 'Publish Proxy Client Nuget package'
-          condition: ne('$(swaggerChanged)', '0')
+          condition: ne(variables['swaggerChanged'], '0')
           inputs:
             command: 'push'
             packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackage/*.nupkg;!$(Pipeline.Workspace)/ProxyNugetPackage/*.symbols.nupkg'            
