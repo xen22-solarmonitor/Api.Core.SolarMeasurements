@@ -27,17 +27,19 @@ namespace Api.Core.SolarMeasurements.Controllers
         private readonly ISolarMeasurementsService _service;
 
         public SolarMeasurementsController(
-            ISolarMeasurementsService service, 
+            ISolarMeasurementsService service,
             ILogger<SolarMeasurementsController> logger)
         {
-            _service = service ?? throw new ArgumentNullException(nameof(service));
+            _service = service ??
+                throw new ArgumentNullException(nameof(service));
             _logger = logger;
-            
+
             _logger.LogDebug($"{nameof(SolarMeasurementsController)} constructed.");
         }
 
         /// <summary>
         /// Get a set of measurements between two timestamps.
+        /// test that a new swagger is generated and proxy nuget published! (TODO: remove)
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -54,9 +56,7 @@ namespace Api.Core.SolarMeasurements.Controllers
         [HttpGet]
         [Route("")]
         public async Task<ActionResult<IEnumerable<Measurement>>> Get(
-            [FromQuery][Required] DateTime startTime, 
-            [FromQuery][Required] DateTime endTime, 
-            [FromQuery][Required] Granularity granularity)
+            [FromQuery][Required] DateTime startTime, [FromQuery][Required] DateTime endTime, [FromQuery][Required] Granularity granularity)
         {
             _logger.LogDebug($"GetMeasurements: startTime: {startTime}, endTime: {endTime}, granularity: {granularity}");
             var measurements = await _service.GetMeasurements(startTime, endTime, granularity);
