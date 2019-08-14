@@ -206,18 +206,18 @@ stages:
     - bash: 'echo +++ swaggerChanged variable after being set: $(swaggerChanged)'
 
     - task: DotNetCoreCLI@2
-      displayName: 'Create Proxy Client Nuget package'
+      displayName: 'Create Proxy Client Nuget packages (nupkg and snupkg)'
       condition: ne(variables['swaggerChanged'], '0')
       inputs:
         command: 'custom'
         projects: '$(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurementsProxy/*.csproj'
         custom: 'pack'
-        arguments: '--no-build --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
+        arguments: '--no-build --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)/packages'
 
-    - publish: $(System.DefaultWorkingDirectory)/Api.Core.SolarMeasurementsProxy.$(nugetVersion).nupkg
-      displayName: 'Archive Nuget package'
+    - publish: $(System.DefaultWorkingDirectory)/packages
+      displayName: 'Archive Nuget packages'
       condition: ne(variables['swaggerChanged'], '0')
-      artifact: ProxyNugetPackage
+      artifact: ProxyNugetPackages
 
         
     - bash: ls -la $(System.DefaultWorkingDirectory)/src/Api.Core.SolarMeasurements/bin/$(buildConfiguration)/netcoreapp3.0
@@ -429,16 +429,16 @@ stages:
         - bash: 'echo +++ swaggerChanged variable after being set: $(swaggerChanged)'
 
         - download: current 
-          displayName: 'Download Nuget package'
+          displayName: 'Download Nuget packages'
           condition: ne(variables['swaggerChanged'], '0')
-          artifact: ProxyNugetPackage
+          artifact: ProxyNugetPackages
             
         - task: NuGetCommand@2
-          displayName: 'Publish Proxy Client Nuget package'
+          displayName: 'Publish Proxy Client Nuget packages'
           condition: ne(variables['swaggerChanged'], '0')
           inputs:
             command: 'push'
-            packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackage/*.nupkg;!$(Pipeline.Workspace)/ProxyNugetPackage/*.symbols.nupkg'            
+            packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackages/*.nupkg;!$(Pipeline.Workspace)/ProxyNugetPackages/*.symbols.nupkg'            
             nuGetFeedType: 'external'
             publishFeedCredentials: 'Nuget.org service connection'
             allowPackageConflicts: true
