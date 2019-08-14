@@ -39,6 +39,7 @@ namespace Api.Core.SolarMeasurements.Controllers
 
         /// <summary>
         /// Get a set of measurements between two timestamps.
+        /// test that a new swagger is generated and proxy nuget published! (TODO: remove)
         /// </summary>
         /// <remarks>
         /// Sample request:

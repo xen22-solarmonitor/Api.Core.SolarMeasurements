@@ -434,7 +434,7 @@ stages:
           artifact: ProxyNugetPackages
             
         - task: NuGetCommand@2
-          displayName: 'Publish Proxy Client Nuget packages'
+          displayName: 'Publish Proxy Client Nuget package'
           condition: ne(variables['swaggerChanged'], '0')
           inputs:
             command: 'push'
@@ -442,6 +442,18 @@ stages:
             nuGetFeedType: 'external'
             publishFeedCredentials: 'Nuget.org service connection'
             allowPackageConflicts: true
+
+        - task: NuGetCommand@2
+          displayName: 'Publish Proxy Client Nuget symbol package'
+          condition: ne(variables['swaggerChanged'], '0')
+          inputs:
+            command: 'push'
+            packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackages/*.snupkg'
+            nuGetFeedType: 'external'
+            publishFeedCredentials: 'Nuget.org service connection'
+            allowPackageConflicts: true
+
+
 
 
 
