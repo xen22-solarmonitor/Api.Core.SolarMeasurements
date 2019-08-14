@@ -39,7 +39,7 @@ namespace Api.Core.SolarMeasurements.Controllers
 
         /// <summary>
         /// Get a set of measurements between two timestamps.
-        /// test 3 (TODO: remove)
+        /// test 4 (TODO: remove)
         /// </summary>
         /// <remarks>
         /// Sample request:
