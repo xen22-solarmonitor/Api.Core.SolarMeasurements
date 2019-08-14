@@ -170,7 +170,7 @@ stages:
     - task: PublishBuildArtifacts@1
       displayName: 'Publish generated swagger.json file for this build.'
       inputs:
-        pathToPublish: '$(System.DefaultWorkingDirectory)/swagger_*.json'
+        pathToPublish: '$(System.DefaultWorkingDirectory)/swagger_$(GitVersion.SemVer).json'
         artifactName: 'swagger'
 
     - task: DownloadPipelineArtifact@2
