@@ -405,16 +405,16 @@ stages:
         - download: current
           artifact: BuiltSourceTree
 
-        - task: DownloadPipelineArtifact@2
-          displayName: 'Retrieve swagger.json from previous build'
-          inputs:
-            artifact: 'swagger'
-            path: '$(Pipeline.Workspace)'
-            source: 'specific'
-            pipeline: '$(System.DefinitionId)'
-            project: '$(System.TeamProjectId)'
-            runVersion: 'latestFromBranch'
-            runBranch: '$(Build.SourceBranch)'
+        # - task: DownloadPipelineArtifact@2
+        #   displayName: 'Retrieve swagger.json from previous build'
+        #   inputs:
+        #     artifact: 'swagger'
+        #     path: '$(Pipeline.Workspace)'
+        #     source: 'specific'
+        #     pipeline: '$(System.DefinitionId)'
+        #     project: '$(System.TeamProjectId)'
+        #     runVersion: 'latestFromBranch'
+        #     runBranch: '$(Build.SourceBranch)'
 
         - bash: 'echo +++ swaggerChanged variable before being set: $(swaggerChanged)'
             
