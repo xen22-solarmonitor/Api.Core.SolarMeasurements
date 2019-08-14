@@ -53,6 +53,7 @@ namespace Api.Core.SolarMeasurements.Controllers
         /// <returns></returns>
         /// <response code="200">Returns the requested set of measurements</response>
         /// <response code="400">If no measurements are found</response>
+        /// <response code="404">If no measurements found</response>
         [HttpGet]
         [Route("")]
         public async Task<ActionResult<IEnumerable<Measurement>>> Get(
