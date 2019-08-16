@@ -46,7 +46,7 @@ namespace Api.Core.SolarMeasurements.Controllers
         ///     GET /SolarMeasurements?startTime=2016-01-01T12:00:00&endTime=2016-01-10T12:00:00&granularity=2
         ///
         /// </remarks>
-        /// <param name="startTime5">Start timestamp</param>
+        /// <param name="startTime6">Start timestamp</param>
         /// <param name="endTime">End timestamp</param>
         /// <param name="granularity">how granular should the results be</param>
         /// <returns></returns>
