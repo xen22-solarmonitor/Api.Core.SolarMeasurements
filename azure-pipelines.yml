@@ -447,7 +447,7 @@ stages:
           condition: ne(variables['swaggerChanged'], '0')
           inputs:
             command: 'push'
-            packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackages/*.nupkg;!$(Pipeline.Workspace)/ProxyNugetPackages/*.symbols.nupkg'            
+            packagesToPush: '$(Pipeline.Workspace)/ProxyNugetPackages/*.nupkg;!$(Pipeline.Workspace)/ProxyNugetPackages/*.snupkg'            
             nuGetFeedType: 'external'
             publishFeedCredentials: 'Nuget.org service connection'
             allowPackageConflicts: true
@@ -461,8 +461,6 @@ stages:
             nuGetFeedType: 'external'
             publishFeedCredentials: 'Nuget.org service connection'
             allowPackageConflicts: true
-
-
 
 
 
