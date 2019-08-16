@@ -436,6 +436,11 @@ stages:
           displayName: 'Download Nuget packages'
           condition: ne(variables['swaggerChanged'], '0')
           artifact: ProxyNugetPackages
+
+        - task: NuGetToolInstaller@1
+          displayName: 'Install NuGet v. 4.9.0 or newer (which supports symbol packages)'
+          inputs:
+            versionSpec: '>=4.9.0'
             
         - task: NuGetCommand@2
           displayName: 'Publish Proxy Client Nuget package'
