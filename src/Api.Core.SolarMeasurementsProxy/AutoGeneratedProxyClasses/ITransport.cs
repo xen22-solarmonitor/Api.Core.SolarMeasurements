@@ -18,7 +18,7 @@ namespace Api.Core.SolarMeasurementsProxy
     /// </summary>
     public partial interface ITransport
     {
-        /// <param name='startTime'>
+        /// <param name='startTime2'>
         /// </param>
         /// <param name='endTime'>
         /// </param>
@@ -40,7 +40,7 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime2, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <param name='timestamp'>
         /// </param>
         /// <param name='customHeaders'>

@@ -17,7 +17,7 @@
         ],
         "parameters": [
           {
-            "name": "startTime",
+            "name": "startTime3",
             "in": "query",
             "required": true,
             "schema": {

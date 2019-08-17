@@ -46,7 +46,7 @@ namespace Api.Core.SolarMeasurements.Controllers
         ///     GET /SolarMeasurements?startTime=2016-01-01T12:00:00&endTime=2016-01-10T12:00:00&granularity=2
         ///
         /// </remarks>
-        /// <param name="startTime8">Start timestamp</param>
+        /// <param name="startTime">Start timestamp</param>
         /// <param name="endTime">End timestamp</param>
         /// <param name="granularity">how granular should the results be</param>
         /// <returns></returns>
@@ -55,10 +55,10 @@ namespace Api.Core.SolarMeasurements.Controllers
         [HttpGet]
         [Route("")]
         public async Task<ActionResult<IEnumerable<Measurement>>> Get(
-            [FromQuery][Required] DateTime startTime2, [FromQuery][Required] DateTime endTime, [FromQuery][Required] Granularity granularity)
+            [FromQuery][Required] DateTime startTime3, [FromQuery][Required] DateTime endTime, [FromQuery][Required] Granularity granularity)
         {
-            _logger.LogDebug($"GetMeasurements: startTime: {startTime2}, endTime: {endTime}, granularity: {granularity}");
-            var measurements = await _service.GetMeasurements(startTime2, endTime, granularity);
+            _logger.LogDebug($"GetMeasurements: startTime: {startTime3}, endTime: {endTime}, granularity: {granularity}");
+            var measurements = await _service.GetMeasurements(startTime3, endTime, granularity);
             return Ok(measurements);
         }
 

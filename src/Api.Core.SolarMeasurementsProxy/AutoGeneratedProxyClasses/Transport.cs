@@ -46,7 +46,7 @@ namespace Api.Core.SolarMeasurementsProxy
         /// </summary>
         public SolarMeasurementsCoreAPI Client { get; private set; }
 
-        /// <param name='startTime'>
+        /// <param name='startTime2'>
         /// </param>
         /// <param name='endTime'>
         /// </param>
@@ -74,7 +74,7 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime2, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (granularity == null)
             {
@@ -87,7 +87,7 @@ namespace Api.Core.SolarMeasurementsProxy
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("startTime", startTime);
+                tracingParameters.Add("startTime2", startTime2);
                 tracingParameters.Add("endTime", endTime);
                 tracingParameters.Add("granularity", granularity);
                 tracingParameters.Add("cancellationToken", cancellationToken);
@@ -97,7 +97,7 @@ namespace Api.Core.SolarMeasurementsProxy
             var _baseUrl = Client.BaseUri.AbsoluteUri;
             var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/v1.0/SolarMeasurements").ToString();
             List<string> _queryParameters = new List<string>();
-            _queryParameters.Add(string.Format("startTime={0}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(startTime, Client.SerializationSettings).Trim('"'))));
+            _queryParameters.Add(string.Format("startTime2={0}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(startTime2, Client.SerializationSettings).Trim('"'))));
             _queryParameters.Add(string.Format("endTime={0}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(endTime, Client.SerializationSettings).Trim('"'))));
             if (granularity != null)
             {

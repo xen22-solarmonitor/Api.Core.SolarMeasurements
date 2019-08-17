@@ -20,22 +20,22 @@ namespace Api.Core.SolarMeasurementsProxy
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='startTime'>
+            /// <param name='startTime2'>
             /// </param>
             /// <param name='endTime'>
             /// </param>
             /// <param name='granularity'>
             /// Possible values include: 'hourly', 'daily', 'weekly', 'monthly'
             /// </param>
-            public static IList<Measurement> SolarMeasurements(this ITransport operations, System.DateTime startTime, System.DateTime endTime, string granularity)
+            public static IList<Measurement> SolarMeasurements(this ITransport operations, System.DateTime startTime2, System.DateTime endTime, string granularity)
             {
-                return operations.SolarMeasurementsAsync(startTime, endTime, granularity).GetAwaiter().GetResult();
+                return operations.SolarMeasurementsAsync(startTime2, endTime, granularity).GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='startTime'>
+            /// <param name='startTime2'>
             /// </param>
             /// <param name='endTime'>
             /// </param>
@@ -45,9 +45,9 @@ namespace Api.Core.SolarMeasurementsProxy
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<Measurement>> SolarMeasurementsAsync(this ITransport operations, System.DateTime startTime, System.DateTime endTime, string granularity, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Measurement>> SolarMeasurementsAsync(this ITransport operations, System.DateTime startTime2, System.DateTime endTime, string granularity, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.SolarMeasurementsWithHttpMessagesAsync(startTime, endTime, granularity, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.SolarMeasurementsWithHttpMessagesAsync(startTime2, endTime, granularity, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
