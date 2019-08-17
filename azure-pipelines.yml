@@ -28,11 +28,11 @@ variables:
 stages:
   - template: 'azure-pipelines/pipeline.api.yml@templates'
     parameters:
-      customDotnetVersion: '$(customDotnetVersion)'
-      buildConfiguration: 'Release'
-      apiName: 'Api.Core.SolarMeasurements'
-      apiDescription: "Solar measurements Core API"
-      productDescription: "SolarMonitor"
-      dockerContainerTag: 'api.core.solarmeasurements'
-      dockerId: 'solarmonitor'
+      customDotnetVersion:    '$(customDotnetVersion)'
+      buildConfiguration:     'Release'
+      apiName:                'Api.Core.SolarMeasurements'
+      apiDescription:         'Solar measurements Core API'
+      productDescription:     'SolarMonitor'
+      dockerContainerTag:     'api.core.solarmeasurements'
+      dockerId:               'solarmonitor'
 
