@@ -1,8 +1,3 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
   branches:
     include:
@@ -20,19 +15,10 @@ resources:
     name: xen22-solarmonitor/Common.Infrastructure.CI
     endpoint: 'xen22-solarmonitor'
 
-# pool:
-#   vmImage: 'ubuntu-latest'
-
 variables:
   # enable debug logging in the pipeline
   System.Debug: true
   customDotnetVersion: '3.0.100-preview7-012821'
-  # buildConfiguration: 'Release'
-  # solutionName: 'Api.Core.SolarMeasurements'
-  # apiDescription: "Solar measurements Core API"
-  # productDescription: "SolarMonitor"
-  # dockerContainerTag: 'api.core.solarmeasurements'
-  # dockerId: 'solarmonitor'
 
   # Azure DevOps variables are transformed into environment variables, with these variables we
   # avoid the first time experience and telemetry to speed up the build.
@@ -40,7 +26,7 @@ variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   
 stages:
-  - template: 'azure-pipelines/api-pipeline.yml@templates'
+  - template: 'azure-pipelines/pipeline.api.yml@templates'
     parameters:
       sdk: '$(customDotnetVersion)'
       buildConfiguration: 'Release'
