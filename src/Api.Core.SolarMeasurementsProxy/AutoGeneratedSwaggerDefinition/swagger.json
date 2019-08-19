@@ -99,6 +99,26 @@
           }
         }
       }
+    },
+    "/api/Version": {
+      "get": {
+        "tags": [
+          "Version"
+        ],
+        "summary": "Returns version information about this service",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VersionDto"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -117,6 +137,32 @@
           "value": {
             "type": "number",
             "format": "double"
+          }
+        }
+      },
+      "VersionDto": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string"
+          },
+          "assemblyVersion": {
+            "type": "string"
+          },
+          "fullVersion": {
+            "type": "string"
+          },
+          "commitSha": {
+            "type": "string"
+          },
+          "commitBranch": {
+            "type": "string"
+          },
+          "buildTime": {
+            "type": "string"
+          },
+          "buildConfiguration": {
+            "type": "string"
           }
         }
       }

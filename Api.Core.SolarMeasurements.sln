@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Core.SolarMeasurementsIntegrationTests", "test\integration\Api.Core.SolarMeasurementsIntegrationTests\Api.Core.SolarMeasurementsIntegrationTests.csproj", "{2FF2DEA6-617C-43B1-88D5-FEC8DA337448}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{34EFD2D4-103F-41FF-A75F-BAA5A28FEF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Versioning", "packages\Common.Versioning\Common.Versioning.csproj", "{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,18 @@ Global
 		{2FF2DEA6-617C-43B1-88D5-FEC8DA337448}.Release|x64.Build.0 = Release|Any CPU
 		{2FF2DEA6-617C-43B1-88D5-FEC8DA337448}.Release|x86.ActiveCfg = Release|Any CPU
 		{2FF2DEA6-617C-43B1-88D5-FEC8DA337448}.Release|x86.Build.0 = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|x64.Build.0 = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Debug|x86.Build.0 = Debug|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|x64.ActiveCfg = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|x64.Build.0 = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|x86.ActiveCfg = Release|Any CPU
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{62575666-81BE-4609-A7EF-EB77B4409589} = {55823825-4A45-4B36-A532-050969CC8132}
@@ -88,5 +104,6 @@ Global
 		{ACB15CC8-8CF1-46DC-BD93-7213F04CD6BF} = {86B62856-83AD-4DF9-880A-62CA985776C0}
 		{0B54B5ED-1EAD-408E-8351-CED62D7681EA} = {FDD620AC-7878-480F-AABF-56CB834B4BA4}
 		{2FF2DEA6-617C-43B1-88D5-FEC8DA337448} = {0B54B5ED-1EAD-408E-8351-CED62D7681EA}
+		{EECC3A57-FADB-4831-95DA-BCB88BD0B00F} = {34EFD2D4-103F-41FF-A75F-BAA5A28FEF2D}
 	EndGlobalSection
 EndGlobal
