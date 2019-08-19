@@ -37,6 +37,7 @@ namespace Common.Versioning
 
             _descriptionFields = new Dictionary<AssemblyDescriptionField, string>();
             var entryAssembly = Assembly.GetEntryAssembly();
+            _logger.LogDebug($"Retrieving Description field from assembly {entryAssembly.GetName()}");
             var assemblyDescription = entryAssembly
                 .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
             if (assemblyDescription == null)
