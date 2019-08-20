@@ -79,5 +79,33 @@ namespace Api.Core.SolarMeasurementsProxy
                 }
             }
 
+            /// <summary>
+            /// Returns version information about this service
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static VersionDto Version(this ITransport operations)
+            {
+                return operations.VersionAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Returns version information about this service
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<VersionDto> VersionAsync(this ITransport operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.VersionWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
     }
 }
