@@ -65,9 +65,19 @@ namespace Common.Versioning
             }
         }
 
+        private string GetApiVersion()
+        {
+            var majorVersion = Assembly.GetEntryAssembly()?.GetName()?.Version?.Major ?? 0;
+            if (majorVersion == 0)
+            {
+                majorVersion = 1;
+            }
+            return $"v{majorVersion}";
+        }
+
         public VersionInfo VersionInfo => new VersionInfo
         {
-            ApiVersion = "1.0",
+            ApiVersion = GetApiVersion(),
             AssemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString(),
             FullVersion = _descriptionFields.GetValueOrDefault(AssemblyDescriptionField.SemanticVersion),
             CommitSha = _descriptionFields.GetValueOrDefault(AssemblyDescriptionField.Commit),

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Core.SolarMeasurements.Controllers
 {
+    //[ApiVersionNeutral]
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
