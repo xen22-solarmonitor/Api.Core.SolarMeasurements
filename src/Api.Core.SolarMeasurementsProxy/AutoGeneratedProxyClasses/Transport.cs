@@ -53,6 +53,8 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <param name='granularity'>
         /// Possible values include: 'hourly', 'daily', 'weekly', 'monthly'
         /// </param>
+        /// <param name='version'>
+        /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -74,11 +76,15 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime3, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime3, System.DateTime endTime, string granularity, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (granularity == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "granularity");
+            }
+            if (version == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "version");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -90,12 +96,14 @@ namespace Api.Core.SolarMeasurementsProxy
                 tracingParameters.Add("startTime3", startTime3);
                 tracingParameters.Add("endTime", endTime);
                 tracingParameters.Add("granularity", granularity);
+                tracingParameters.Add("version", version);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "SolarMeasurements", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/v1.0/SolarMeasurements").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/v{version}/SolarMeasurements").ToString();
+            _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
             List<string> _queryParameters = new List<string>();
             _queryParameters.Add(string.Format("startTime3={0}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(startTime3, Client.SerializationSettings).Trim('"'))));
             _queryParameters.Add(string.Format("endTime={0}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(endTime, Client.SerializationSettings).Trim('"'))));
@@ -129,12 +137,6 @@ namespace Api.Core.SolarMeasurementsProxy
 
             // Serialize Request
             string _requestContent = null;
-            // Set Credentials
-            if (Client.Credentials != null)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                await Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            }
             // Send Request
             if (_shouldTrace)
             {
@@ -202,6 +204,8 @@ namespace Api.Core.SolarMeasurementsProxy
 
         /// <param name='timestamp'>
         /// </param>
+        /// <param name='version'>
+        /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -214,11 +218,21 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <exception cref="SerializationException">
         /// Thrown when unable to deserialize the response
         /// </exception>
+        /// <exception cref="ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException">
+        /// Thrown when a required parameter is null
+        /// </exception>
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<Measurement>> SolarMeasurements1WithHttpMessagesAsync(System.DateTime timestamp, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<Measurement>> SolarMeasurements1WithHttpMessagesAsync(System.DateTime timestamp, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (version == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "version");
+            }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -227,13 +241,15 @@ namespace Api.Core.SolarMeasurementsProxy
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("timestamp", timestamp);
+                tracingParameters.Add("version", version);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "SolarMeasurements1", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/v1.0/SolarMeasurements/{timestamp}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/v{version}/SolarMeasurements/{timestamp}").ToString();
             _url = _url.Replace("{timestamp}", System.Uri.EscapeDataString(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(timestamp, Client.SerializationSettings).Trim('"')));
+            _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
             HttpResponseMessage _httpResponse = null;
@@ -256,12 +272,6 @@ namespace Api.Core.SolarMeasurementsProxy
 
             // Serialize Request
             string _requestContent = null;
-            // Set Credentials
-            if (Client.Credentials != null)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                await Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            }
             // Send Request
             if (_shouldTrace)
             {
@@ -382,12 +392,6 @@ namespace Api.Core.SolarMeasurementsProxy
 
             // Serialize Request
             string _requestContent = null;
-            // Set Credentials
-            if (Client.Credentials != null)
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                await Client.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            }
             // Send Request
             if (_shouldTrace)
             {

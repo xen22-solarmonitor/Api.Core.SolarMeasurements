@@ -28,15 +28,22 @@ namespace Common.Versioning
             BuildTime,
             BuildConfig
         }
+        IControllerAssemblyProvider _assemblyProvider;
+        ISupportedApiVersionsRetriever _apiVersionRetriever;
         private ILogger<GitVersionProvider> _logger;
         private Dictionary<AssemblyDescriptionField, string> _descriptionFields;
 
-        public GitVersionProvider(ILogger<GitVersionProvider> logger)
+        public GitVersionProvider(
+            ILogger<GitVersionProvider> logger,
+            IControllerAssemblyProvider assembly,
+            ISupportedApiVersionsRetriever apiVersionRetriever)
         {
             _logger = logger;
+            _assemblyProvider = assembly;
+            _apiVersionRetriever = apiVersionRetriever;
 
             _descriptionFields = new Dictionary<AssemblyDescriptionField, string>();
-            var entryAssembly = Assembly.GetEntryAssembly();
+            var entryAssembly = _assemblyProvider.Assembly;
             _logger.LogDebug($"Retrieving Description field from assembly {entryAssembly.GetName()}");
             var assemblyDescription = entryAssembly
                 .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description;
@@ -63,11 +70,12 @@ namespace Common.Versioning
                 }
                 _descriptionFields[key] = entry[1].Trim();
             }
+
         }
 
         private string GetApiVersion()
         {
-            var majorVersion = Assembly.GetEntryAssembly()?.GetName()?.Version?.Major ?? 0;
+            var majorVersion = _assemblyProvider.Assembly?.GetName()?.Version?.Major ?? 0;
             if (majorVersion == 0)
             {
                 majorVersion = 1;
@@ -77,8 +85,8 @@ namespace Common.Versioning
 
         public VersionInfo VersionInfo => new VersionInfo
         {
-            ApiVersion = GetApiVersion(),
-            AssemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString(),
+            ApiVersions = _apiVersionRetriever.GetSupportedApiVersions(_assemblyProvider.Assembly),
+            AssemblyVersion = _assemblyProvider.Assembly.GetName().Version.ToString(),
             FullVersion = _descriptionFields.GetValueOrDefault(AssemblyDescriptionField.SemanticVersion),
             CommitSha = _descriptionFields.GetValueOrDefault(AssemblyDescriptionField.Commit),
             CommitBranch = _descriptionFields.GetValueOrDefault(AssemblyDescriptionField.Branch),

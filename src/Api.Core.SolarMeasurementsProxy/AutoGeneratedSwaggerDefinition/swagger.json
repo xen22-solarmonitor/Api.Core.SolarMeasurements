@@ -10,7 +10,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/v1.0/SolarMeasurements": {
+    "/api/v{version}/SolarMeasurements": {
       "get": {
         "tags": [
           "SolarMeasurements"
@@ -50,6 +50,14 @@
               "type": "string",
               "default": ""
             }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -69,7 +77,7 @@
         }
       }
     },
-    "/api/v1.0/SolarMeasurements/{timestamp}": {
+    "/api/v{version}/SolarMeasurements/{timestamp}": {
       "get": {
         "tags": [
           "SolarMeasurements"
@@ -83,6 +91,14 @@
               "type": "string",
               "format": "date-time",
               "default": ""
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -143,8 +159,11 @@
       "VersionDto": {
         "type": "object",
         "properties": {
-          "apiVersion": {
-            "type": "string"
+          "apiVersions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "assemblyVersion": {
             "type": "string"

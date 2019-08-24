@@ -7,6 +7,8 @@
 namespace Api.Core.SolarMeasurementsProxy.Models
 {
     using Newtonsoft.Json;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Linq;
 
     public partial class VersionDto
@@ -22,9 +24,9 @@ namespace Api.Core.SolarMeasurementsProxy.Models
         /// <summary>
         /// Initializes a new instance of the VersionDto class.
         /// </summary>
-        public VersionDto(string apiVersion = default(string), string assemblyVersion = default(string), string fullVersion = default(string), string commitSha = default(string), string commitBranch = default(string), string buildTime = default(string), string buildConfiguration = default(string))
+        public VersionDto(IList<string> apiVersions = default(IList<string>), string assemblyVersion = default(string), string fullVersion = default(string), string commitSha = default(string), string commitBranch = default(string), string buildTime = default(string), string buildConfiguration = default(string))
         {
-            ApiVersion = apiVersion;
+            ApiVersions = apiVersions;
             AssemblyVersion = assemblyVersion;
             FullVersion = fullVersion;
             CommitSha = commitSha;
@@ -41,8 +43,8 @@ namespace Api.Core.SolarMeasurementsProxy.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "apiVersion")]
-        public string ApiVersion { get; set; }
+        [JsonProperty(PropertyName = "apiVersions")]
+        public IList<string> ApiVersions { get; set; }
 
         /// <summary>
         /// </summary>

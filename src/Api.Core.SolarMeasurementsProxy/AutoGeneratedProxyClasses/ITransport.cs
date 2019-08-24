@@ -25,6 +25,8 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <param name='granularity'>
         /// Possible values include: 'hourly', 'daily', 'weekly', 'monthly'
         /// </param>
+        /// <param name='version'>
+        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -40,8 +42,10 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime3, System.DateTime endTime, string granularity, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<IList<Measurement>>> SolarMeasurementsWithHttpMessagesAsync(System.DateTime startTime3, System.DateTime endTime, string granularity, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <param name='timestamp'>
+        /// </param>
+        /// <param name='version'>
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -55,7 +59,10 @@ namespace Api.Core.SolarMeasurementsProxy
         /// <exception cref="Microsoft.Rest.SerializationException">
         /// Thrown when unable to deserialize the response
         /// </exception>
-        Task<HttpOperationResponse<Measurement>> SolarMeasurements1WithHttpMessagesAsync(System.DateTime timestamp, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<HttpOperationResponse<Measurement>> SolarMeasurements1WithHttpMessagesAsync(System.DateTime timestamp, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns version information about this service
         /// </summary>

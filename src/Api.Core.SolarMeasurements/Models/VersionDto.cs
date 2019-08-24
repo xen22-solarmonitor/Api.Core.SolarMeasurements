@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace Api.Core.SolarMeasurements.Models
 {
     public class VersionDto
     {
-        public string ApiVersion { get; set; }
+        public IEnumerable<string> ApiVersions { get; set; }
         public string AssemblyVersion { get; set; }
         public string FullVersion { get; set; }
         public string CommitSha { get; set; }

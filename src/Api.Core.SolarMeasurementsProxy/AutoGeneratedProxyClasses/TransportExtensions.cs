@@ -27,9 +27,11 @@ namespace Api.Core.SolarMeasurementsProxy
             /// <param name='granularity'>
             /// Possible values include: 'hourly', 'daily', 'weekly', 'monthly'
             /// </param>
-            public static IList<Measurement> SolarMeasurements(this ITransport operations, System.DateTime startTime3, System.DateTime endTime, string granularity)
+            /// <param name='version'>
+            /// </param>
+            public static IList<Measurement> SolarMeasurements(this ITransport operations, System.DateTime startTime3, System.DateTime endTime, string granularity, string version)
             {
-                return operations.SolarMeasurementsAsync(startTime3, endTime, granularity).GetAwaiter().GetResult();
+                return operations.SolarMeasurementsAsync(startTime3, endTime, granularity, version).GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -42,12 +44,14 @@ namespace Api.Core.SolarMeasurementsProxy
             /// <param name='granularity'>
             /// Possible values include: 'hourly', 'daily', 'weekly', 'monthly'
             /// </param>
+            /// <param name='version'>
+            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<Measurement>> SolarMeasurementsAsync(this ITransport operations, System.DateTime startTime3, System.DateTime endTime, string granularity, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Measurement>> SolarMeasurementsAsync(this ITransport operations, System.DateTime startTime3, System.DateTime endTime, string granularity, string version, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.SolarMeasurementsWithHttpMessagesAsync(startTime3, endTime, granularity, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.SolarMeasurementsWithHttpMessagesAsync(startTime3, endTime, granularity, version, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -58,9 +62,11 @@ namespace Api.Core.SolarMeasurementsProxy
             /// </param>
             /// <param name='timestamp'>
             /// </param>
-            public static Measurement SolarMeasurements1(this ITransport operations, System.DateTime timestamp)
+            /// <param name='version'>
+            /// </param>
+            public static Measurement SolarMeasurements1(this ITransport operations, System.DateTime timestamp, string version)
             {
-                return operations.SolarMeasurements1Async(timestamp).GetAwaiter().GetResult();
+                return operations.SolarMeasurements1Async(timestamp, version).GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -68,12 +74,14 @@ namespace Api.Core.SolarMeasurementsProxy
             /// </param>
             /// <param name='timestamp'>
             /// </param>
+            /// <param name='version'>
+            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Measurement> SolarMeasurements1Async(this ITransport operations, System.DateTime timestamp, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Measurement> SolarMeasurements1Async(this ITransport operations, System.DateTime timestamp, string version, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.SolarMeasurements1WithHttpMessagesAsync(timestamp, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.SolarMeasurements1WithHttpMessagesAsync(timestamp, version, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
