@@ -18,7 +18,7 @@ resources:
 variables:
   # enable debug logging in the pipeline
   System.Debug: true
-  customDotnetVersion: '3.0.100-preview7-012821'
+  customDotnetVersion: '3.0.100-preview8-013656'
 
   # Azure DevOps variables are transformed into environment variables, with these variables we
   # avoid the first time experience and telemetry to speed up the build.
