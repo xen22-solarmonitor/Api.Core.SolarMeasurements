@@ -13,11 +13,9 @@ using Microsoft.Extensions.Logging;
 namespace Api.Core.SolarMeasurements.Controllers
 {
 
-    // TODO: enable API versioning when Microsoft.AspNetCore.Mvc.Versioning package supports .NET Core 3.0
-    //[ApiVersion("1.0")]
-    //[Route("api/v{version:apiVersion}/[controller]")]
     // TODO: revert back to v1 instead of v1.0 when autorest supports it
-    [Route("api/v1.0/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [Produces("application/json")]
     [ApiController]
     [ApiConventionType(typeof(DefaultApiConventions))]

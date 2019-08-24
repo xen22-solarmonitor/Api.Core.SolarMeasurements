@@ -7,6 +7,7 @@ using Api.Core.SolarMeasurements.Configuration;
 using Api.Core.SolarMeasurements.DependencyInjection;
 using Api.Core.SolarMeasurements.Repositories;
 using Api.Core.SolarMeasurements.Services;
+using Api.Core.SolarMeasurements.Versioning;
 using AutoMapper;
 using Castle.Windsor;
 using Castle.Windsor.MsDependencyInjection;
@@ -38,8 +39,12 @@ namespace Api.Core.SolarMeasurements
         {
             services.AddControllers();
 
-            // TODO: enable API versioning when Microsoft.AspNetCore.Mvc.Versioning package supports .NET Core 3.0
-            //services.AddApiVersioning();
+            services.AddApiVersioning(o =>
+            {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+            });
 
             // AutoMapper configuration
             var mappingConfig = new MapperConfiguration(mc =>
@@ -56,20 +61,27 @@ namespace Api.Core.SolarMeasurements
             var solarConfig = new SolarConfig();
             Configuration.Bind(solarConfig);
 
+            var apiVersionsRetriever = new SupportedApiVersionsRetriever();
+            var apiVersions = apiVersionsRetriever.GetSupportedApiVersions(
+                Assembly.GetAssembly(typeof(Startup)));
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new OpenApiInfo
+                foreach (var apiVersion in apiVersions)
                 {
-                    Title = GetTitle(),
-                        Version = GetVersion(),
-                        Description = "A simple API for retrieving measurements from Solar sites",
-                        License = new OpenApiLicense
-                        {
-                            Name = "Licensed under MIT Licence",
-                                Url = new Uri("http://opensource.org/licenses/MIT"),
-                        }
-                });
+                    c.SwaggerDoc($"v{apiVersion}", new OpenApiInfo
+                    {
+                        Title = GetTitle(),
+                            Version = GetVersion(),
+                            Description = "A simple API for retrieving measurements from Solar sites",
+                            License = new OpenApiLicense
+                            {
+                                Name = "Licensed under MIT Licence",
+                                    Url = new Uri("http://opensource.org/licenses/MIT"),
+                            }
+                    });
+                }
 
                 c.DescribeAllEnumsAsStrings();
                 c.DescribeStringEnumsInCamelCase();
@@ -88,6 +100,10 @@ namespace Api.Core.SolarMeasurements
                 new InfluxDbClient("http://yourinfluxdb.com:8086/",
                     "ciprian", "", InfluxDbVersion.Latest));
             services.AddSingleton<IVersionProvider, GitVersionProvider>();
+            services.AddSingleton<IStartupAssemblyProvider, StartupAssemblyProvider>();
+            services.AddSingleton<IControllerAssemblyProvider, ControllerAssemblyProvider>();
+            services.AddSingleton<ISupportedApiVersionsRetriever, SupportedApiVersionsRetriever>();
+            //services.AddSingleton <
 
             // Add custom provider
             //var container = new MainContainerFactory(services).CreateServiceProvider();
