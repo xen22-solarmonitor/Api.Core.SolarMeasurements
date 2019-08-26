@@ -20,6 +20,9 @@ variables:
   System.Debug: true
   customDotnetVersion: '3.0.100-preview8-013656'
 
+  # Restore NuGet packages at a specific location
+  NUGET_PACKAGES: $(Pipeline.Workspace)/.nuget/packages
+
   # Azure DevOps variables are transformed into environment variables, with these variables we
   # avoid the first time experience and telemetry to speed up the build.
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
