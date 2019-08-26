@@ -9,5 +9,4 @@ namespace Common.Versioning
 
     public interface IControllerAssemblyProvider : IAssemblyProvider { }
     public interface IStartupAssemblyProvider : IAssemblyProvider { }
-
 }
