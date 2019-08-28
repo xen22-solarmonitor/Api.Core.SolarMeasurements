@@ -15,6 +15,11 @@
             "cwd": "${workspaceFolder}/src/Api.Core.SolarMeasurements",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            // "justMyCode": false,
+            // "symbolOptions": {
+            //     "searchMicrosoftSymbolServer": true
+            // },
+            // "suppressJITOptimizations": true,
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
@@ -27,10 +32,109 @@
             }
         },
         {
+            "name": ".NET Core Launch with symbols (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build api",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/src/Api.Core.SolarMeasurements/bin/Debug/netcoreapp3.0/Api.Core.SolarMeasurements.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Api.Core.SolarMeasurements",
+            "stopAtEntry": false,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "justMyCode": false,
+            "symbolOptions": {
+                "searchMicrosoftSymbolServer": true
+            },
+            "suppressJITOptimizations": true,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "COMPlus_ZapDisable": "1"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processId": "${command:pickProcess}"
+            "processId": "${command:pickProcess}",
+
+            // Debugging external dependencies
+            "justMyCode": false,
+            "symbolOptions": {
+                "searchMicrosoftSymbolServer": true
+            },
+            "suppressJITOptimizations": true
+        },
+        {
+            "name": ".NET Core Xunit tests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build integration tests",
+            "program": "dotnet",
+            "args": ["test"],
+            "cwd": "${workspaceRoot}/test/integration/Api.Core.SolarMeasurementsIntegrationTests",
+            "externalConsole": false,
+            "stopAtEntry": true,
+            "internalConsoleOptions": "openOnSessionStart",
+            // Debugging external dependencies
+            "justMyCode": false,
+            "symbolOptions": {
+                "searchMicrosoftSymbolServer": true
+            },
+            "suppressJITOptimizations": true,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "COMPlus_ZapDisable": "1",
+                "VSTEST_HOST_DEBUG": "1"
+            }
+        },
+        {
+            "name": "Integration tests with symbols",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build integration tests",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "dotnet",
+            "args": [
+                "exec",
+                "--runtimeconfig",
+                "${workspaceRoot}/test/integration/Api.Core.SolarMeasurementsIntegrationTests/bin/Debug/netcoreapp3.0/Api.Core.SolarMeasurementsIntegrationTests.runtimeconfig.json",
+                "--depsfile",
+                "${workspaceRoot}/test/integration/Api.Core.SolarMeasurementsIntegrationTests/bin/Debug/netcoreapp3.0/Api.Core.SolarMeasurementsIntegrationTests.deps.json",
+                "--additionalprobingpath",
+                "/home/ciprian/.nuget/packages",
+                "${workspaceRoot}/test/integration/Api.Core.SolarMeasurementsIntegrationTests/bin/Debug/netcoreapp3.0/Api.Core.SolarMeasurementsIntegrationTests.dll",
+                "--namespace",
+                "Api.Core.SolarMeasurementsIntegrationTests"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+
+            // Debugging external dependencies
+            "justMyCode": false,
+            "symbolOptions": {
+                "searchMicrosoftSymbolServer": true
+            },
+            "suppressJITOptimizations": true,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "COMPlus_ZapDisable": "1"
+            }
         }
     ]
 }
