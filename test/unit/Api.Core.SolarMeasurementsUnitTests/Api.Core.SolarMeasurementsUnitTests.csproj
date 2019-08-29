@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -24,5 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Api.Core.SolarMeasurements\Api.Core.SolarMeasurements.csproj" />
   </ItemGroup>
+
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+    <Copy SourceFiles="xunit.runner.json" DestinationFolder="$(OutDir)" />
+    <Copy SourceFiles="appsettings.json" DestinationFolder="$(OutDir)" />
+  </Target>
 
 </Project>
