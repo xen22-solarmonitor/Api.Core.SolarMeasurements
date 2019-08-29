@@ -18,7 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup> 
+  </ItemGroup>  
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Api.Core.SolarMeasurements\Api.Core.SolarMeasurements.csproj" />
