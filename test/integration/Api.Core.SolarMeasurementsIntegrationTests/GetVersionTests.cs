@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -8,15 +9,24 @@ using Api.Core.SolarMeasurementsIntegrationTests.Framework;
 using Api.Core.SolarMeasurementsProxy;
 using FluentAssertions;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Api.Core.SolarMeasurementsIntegrationTests
 {
     public class GetVersionTests
     {
+        private readonly ITestOutputHelper _output;
+        //private readonly ILogger _logger;
         private readonly ISolarMeasurementsCoreAPI _client;
 
-        public GetVersionTests()
+        public GetVersionTests(ITestOutputHelper output)
         {
+            _output = output;
+            //_logger = output.BuildLoggerFor<GetVersionTests>();
+            //_logger = output.BuildLogger();
+            output.WriteLine("Start");
+            output.WriteLine($"AppContext.BaseDirectory: {AppContext.BaseDirectory}");
+
             CustomWebApplicationFactory<Startup> factory = new CustomWebApplicationFactory<Startup>();
             _client = new SolarMeasurementsCoreAPI(factory.CreateClient(), true);
         }
