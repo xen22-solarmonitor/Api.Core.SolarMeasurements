@@ -26,5 +26,5 @@
     <Copy SourceFiles="xunit.runner.json" DestinationFolder="$(OutDir)" />
     <Copy SourceFiles="appsettings.json" DestinationFolder="$(OutDir)" />
   </Target>
-
+ 
 </Project>
