@@ -29,7 +29,7 @@ variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   
 stages:
-  - template: 'azure-pipelines/pipeline.api.yml@templates'
+  - template: 'azure-pipelines/pipeline.api-simplified.yml@templates'
     parameters:
       customDotnetVersion:    '$(customDotnetVersion)'
       buildConfiguration:     'Release'
