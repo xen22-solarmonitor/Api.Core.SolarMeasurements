@@ -15,11 +15,6 @@
             "cwd": "${workspaceFolder}/src/Api.Core.SolarMeasurements",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-            // "justMyCode": false,
-            // "symbolOptions": {
-            //     "searchMicrosoftSymbolServer": true
-            // },
-            // "suppressJITOptimizations": true,
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
@@ -41,12 +36,12 @@
             "args": [],
             "cwd": "${workspaceFolder}/src/Api.Core.SolarMeasurements",
             "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "justMyCode": false,
             "symbolOptions": {
                 "searchMicrosoftSymbolServer": true
             },
             "suppressJITOptimizations": true,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
