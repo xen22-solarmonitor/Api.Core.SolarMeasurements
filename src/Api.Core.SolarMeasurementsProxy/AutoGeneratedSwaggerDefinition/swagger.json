@@ -22,8 +22,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "default": ""
+              "format": "date-time"
             }
           },
           {
@@ -32,8 +31,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "default": ""
+              "format": "date-time"
             }
           },
           {
@@ -41,14 +39,7 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": [
-                "hourly",
-                "daily",
-                "weekly",
-                "monthly"
-              ],
-              "type": "string",
-              "default": ""
+              "$ref": "#/components/schemas/Granularity"
             }
           },
           {
@@ -89,8 +80,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "format": "date-time",
-              "default": ""
+              "format": "date-time"
             }
           },
           {
@@ -139,6 +129,15 @@
   },
   "components": {
     "schemas": {
+      "Granularity": {
+        "enum": [
+          "hourly",
+          "daily",
+          "weekly",
+          "monthly"
+        ],
+        "type": "string"
+      },
       "Measurement": {
         "type": "object",
         "properties": {
@@ -163,25 +162,32 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "nullable": true
           },
           "assemblyVersion": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "fullVersion": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "commitSha": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "commitBranch": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "buildTime": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "buildConfiguration": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           }
         }
       }
