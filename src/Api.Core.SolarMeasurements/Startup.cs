@@ -83,8 +83,9 @@ namespace Api.Core.SolarMeasurements
                     });
                 }
 
-                c.DescribeAllEnumsAsStrings();
-                c.DescribeStringEnumsInCamelCase();
+                // TODO: these are deprecated, now depends on serialiser config - check that we get enums as strings
+                //c.DescribeAllEnumsAsStrings();
+                //c.DescribeStringEnumsInCamelCase();
 
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

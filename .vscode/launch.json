@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build api",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/Api.Core.SolarMeasurements/bin/Debug/netcoreapp3.0/Api.Core.SolarMeasurements.dll",
+            "program": "${workspaceFolder}/src/Api.Core.SolarMeasurements/bin/Debug/netcoreapp3.1/Api.Core.SolarMeasurements.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/Api.Core.SolarMeasurements",
             "stopAtEntry": false,

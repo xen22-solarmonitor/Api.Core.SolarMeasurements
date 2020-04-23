@@ -10,6 +10,72 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/v{version}/CurrentVoltageSensorMeasurements": {
+      "get": {
+        "tags": [
+          "CurrentVoltageSensorMeasurements"
+        ],
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "granularity",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Granularity"
+            }
+          },
+          {
+            "name": "reducer",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ReducerFunction"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CurrentVoltageSensorMeasurement"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v{version}/SolarMeasurements": {
       "get": {
         "tags": [
@@ -131,12 +197,52 @@
     "schemas": {
       "Granularity": {
         "enum": [
-          "hourly",
-          "daily",
-          "weekly",
-          "monthly"
+          0,
+          1,
+          2,
+          3
         ],
-        "type": "string"
+        "type": "integer",
+        "format": "int32"
+      },
+      "ReducerFunction": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "The function that is applied to a range of sensor measurements to obtain a single value that\r\nrepresents that range.\r\ne.g. when requesting the average value for a sensor over a period of a day, the Average reducer\r\nfunction can be specified, along with a Granularity value of \"Daily\".!--\r\nNote: not all types of reducers may be applicable to all sensors.",
+        "format": "int32"
+      },
+      "CurrentVoltageSensorMeasurement": {
+        "type": "object",
+        "properties": {
+          "voltageV": {
+            "type": "number",
+            "format": "float"
+          },
+          "currentA": {
+            "type": "number",
+            "format": "float"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorType": {
+            "type": "string",
+            "nullable": true
+          }
+        }
       },
       "Measurement": {
         "type": "object",
